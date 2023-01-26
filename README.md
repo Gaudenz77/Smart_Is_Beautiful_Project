@@ -1,8 +1,8 @@
-[![Gaudenz77 - Opportunity 23 Project - Smart-Is-Beautiful](https://img.shields.io/badge/Gaudenz77_--_Opportunity_23_Project-Smart--Is--Beautiful-fca503?style=for-the-badge)](https://github.com/Gaudenz77/Smart_Is_Beautiful)
+[]()
 ---
 # Smart-Is-Beautiful, Trivia-Quiz Website
 ## Project Task / Assignment 
-* Create a website with a trivia quiz and use all avaliable Web-Dev-Techniques (Html, Css, Js, Php, Bs5, [Github](https://github.com/Gaudenz77/Smart_Is_Beautiful), [Figma]( https:https://www.figma.com/file/8QEAAFkEbpSOTPGylIn5TE/Smart-Is-Beautiful---Figma?node-id=0%3A1&t=WZtDg8V9hCXT2HUl-1))
+* Create a website with a trivia quiz and use all avaliable Web-Dev-Techniques (Html, Css, Js, Php, Bs5, [Github](), [Figma]()
 ----
 
 
