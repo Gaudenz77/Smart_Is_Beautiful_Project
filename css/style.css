@@ -1,0 +1,52 @@
+.body {
+    background-color: aquamarine;
+    color: darkslategray;
+}/* :root {
+    --background-color-light: brown;
+    --color: darkslategray;
+}
+
+.body {
+    background-color: var(--background-color-light);
+    color: ver(--color-light);
+} */
+
+
+/* .body {
+    background-color: aquamarine;
+    color: darkslategray;
+} */
+
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color:#cff4fc;
+     
+    }
+
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color:#cff4fc;
+margin-top: 300px;
+ 
+}
+
+.radiobtn {
+    margin-left:10px;
+}
+
+.textarea1 {
+  
+    text-align: left;
+    vertical-align: top;
+}
+
+/* #myTextarea {
+    text-align: left;
+    vertical-align: top;
+} */
