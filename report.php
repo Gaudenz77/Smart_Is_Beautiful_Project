@@ -8,8 +8,8 @@ require "./includes/header.php";
 
 <div class="container">
   <div class="row">
-    <div class="col bg-warning m-4 p-4">
-      <h1 class="display-2"><br>Smart Is Beautiful ... Are You?</h1>
+    <div class="col-sm bg-warning">
+      <h1 class="display-2"><b>Quiz:</b><br>Smart Is Beautiful ... Are You?</h1>
       <h3>Dear Smartypants: Chose A Topic:</h3>
       <p>
         <select class="form-control" name="quiz" id="quiz">

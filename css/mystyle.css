@@ -1,0 +1,37 @@
+
+
+.header {
+position: fixed;
+left: 0;
+top: 0;
+width: 100%;
+background-color:#cff4fc; 
+} 
+
+#logo {
+    margin-top: 10px;
+    margin-bottom: -100px;
+    padding-right: 30px;
+}
+
+/* .imgsizelogo {
+width: 900px;
+} */
+
+.logo1 {
+    position:relative;
+    top: 100px;
+    left: 0;
+    width:100px;
+}
+
+
+
+
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color:#cff4fc;
+}
