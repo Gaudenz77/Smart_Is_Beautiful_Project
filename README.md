@@ -1,8 +1,8 @@
-[]()
+[![Gaudenz77 - Smart_Is_Beautiful_Project](https://img.shields.io/static/v1?label=Gaudenz77&message=Smart_Is_Beautiful_Project&color=eb6b34&style=for-the-badge)](https://github.com/Gaudenz77/Smart_Is_Beautiful_Project)
 ---
 # Smart-Is-Beautiful, Trivia-Quiz Website
 ## Project Task / Assignment 
-* Create a website with a trivia quiz and use all avaliable Web-Dev-Techniques (Html, Css, Js, Php, Bs5, [Github](), [Figma]()
+* Create a website with a trivia quiz and use all avaliable Web-Dev-Techniques (Html, Css, Js, Php, Bs5, [Github](https://github.com/Gaudenz77/Smart_Is_Beautiful_Project), [Figma](https://www.figma.com/file/8QEAAFkEbpSOTPGylIn5TE/Smart-Is-Beautiful---Figma?node-id=0%3A1&t=njYADqtgww2a73Bh-1)
 ----
 
 
