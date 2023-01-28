@@ -14,7 +14,7 @@ require "./includes/db_connect.php";
     <div class="col bg-warning m-4 p-4">
       <h1 class="display-2"><br>Smart Is Beautiful ... Are You?</h1>
       <h3>Dear Smartypants: Chose A Topic:</h3>
-      <form action="" method="post">
+      <form action="questions.php" method="post">
       
         <select class="form-control" name="quiz" id="quiz">
           <option value="1">Astronautics - Space-Travel</option>
@@ -26,9 +26,32 @@ require "./includes/db_connect.php";
 </div>
 </main>
 
+<div class="footer">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-sm">Left</div>
+      <div class="col-sm">
+          <h1>Footer</h1>
+          <p>DumDeeDummDeeDai</p>
+      </div>
+      <div class="col-sm pt-3  order-first order-md-last">
+      <button type='button' class='btn btn-light'><i class='fa-regular fa-circle-left icongen'></i><a href='index.php'><p class='icnbtns'>BACK</p></a></button>
+    
+      <button type="submit" class="btn btn-primary btn-lg"  role="button">Start Quiz</a>
+      </div>
+    </div>
+  </div>  
+</div>
+
+
+
+
+
+
+
 
 <?php
-require "./includes/footer.php";
+/* require "./includes/footer.php"; */
 ?>
 </form>
 
