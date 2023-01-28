@@ -1,3 +1,4 @@
+<?php require "./includes//session_start.php";?>
 <?php require "./includes/html_head_tag.php";?>
 <body>
 <!-- HEAD TAG MIGHT BE INCLUDED DIRECTLY IN EACH PAGE // MUST BE TESTED, POSSIBLE ERRORS //-->
@@ -8,12 +9,19 @@ require "./includes/header.php";
 require "./includes/db_connect.php";
 ?>
 
+<?php
+require "./includes/tools.php";
+/* prettyPrint($_SESSION); */
+/* prettyPrint($_POST); */
+/*echo print_r($_POST); */
+?>
+
 <main class="">
 <div class="container">
   <div class="row">
     <div class="col m-4 p-4">
       <h1 class="display-2"><br>Smart Is Beautiful ... Are You?</h1>
-      <h3>Dear Smartypants: Chose A Topic:</h3>
+      <h3>Dear Smartypants, Chose A Topic:</h3>
       <form action="questions.php" method="post">
       
         <select class="form-control" name="quiz" id="quiz">
@@ -35,7 +43,7 @@ require "./includes/db_connect.php";
           <p>DumDeeDummDeeDai</p>
       </div>
       <div class="col-sm pt-3  order-first order-md-last">
-      <button type='button' class='btn btn-light'><i class='fa-regular fa-circle-left icongen'></i><a href='index.php'><p class='icnbtns'>BACK</p></a></button>
+      <!-- <a class="btn btnColor" href='index.php'><i class="fa-solid fa-circle-chevron-left fa-3x"></i><p class="btnFont">BACK</p></a> -->
     
       <button type="submit" class="btn btn-primary btn-lg"  role="button">Start Quiz</a>
       </div>
