@@ -3,6 +3,9 @@
 <?php
 require "./includes/header.php";
 ?>
+<?php
+require "./includes/tools.php.php";
+?>
 
 
 <main class="">
@@ -11,13 +14,28 @@ require "./includes/header.php";
     <div class="col-sm bg-warning">
       <h1 class="display-2"><b>Quiz:</b><br>Smart Is Beautiful ... Are You?</h1>
       <h3>Dear Smartypants: Chose A Topic:</h3>
-      <p>
+  <!-- Form FIELDS Start--------------------------------------------------------------------------------------- -->    
       <form action="" method="post">  
-        <select class="form-control" name="quiz" id="quiz">
-          <option value="1">Astronautics - Space-Travel</option>
-          <option value="2">General History</option>
-        </select>
-      </p>
+            <div class="form-group">
+          <label for="question1">What is the primary propulsion method used by most spacecrafts for interplanetary travel?</label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="question1" id="option1" value="France">
+            <label class="form-check-label" for="option1">A. Chemical rockets</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="question1" id="option2" value="Italy">
+            <label class="form-check-label" for="option2">B. Nuclear propulsion</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="question1" id="option3" value="Germany">
+            <label class="form-check-label" for="option3">C. Solar sails</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="question1" id="option4" value="Spain">
+            <label class="form-check-label" for="option4">D. Ion thrusters</label>
+          </div>
+   <!-- Form FIELDS End--------------------------------------------------------------------------------------- -->    
+     
     </div>
   </div>
 </div>
@@ -28,6 +46,7 @@ require "./includes/header.php";
 require "./includes/footer.php";
 ?>
 </form>
+  <!-- Form  End--------------------------------------------------------------------------------------- -->    
 
 
 

@@ -3,6 +3,9 @@
 <?php
 require "./includes/header.php";
 ?>
+<?php
+require "./includes/tools.php.php";
+?>
 
 
 <main class="">
@@ -11,12 +14,12 @@ require "./includes/header.php";
     <div class="col-sm bg-warning">
       <h1 class="display-2"><b>Quiz:</b><br>Smart Is Beautiful ... Are You?</h1>
       <h3>Dear Smartypants: Chose A Topic:</h3>
-      <p>
+      
         <select class="form-control" name="quiz" id="quiz">
           <option value="1">Astronautics - Space-Travel</option>
           <option value="2">General History</option>
         </select>
-      </p>
+      
     </div>
   </div>
 </div>

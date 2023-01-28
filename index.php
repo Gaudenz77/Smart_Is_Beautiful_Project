@@ -12,12 +12,12 @@ require "./includes/header.php";
       <h1 class="display-2"><br>Smart Is Beautiful ... Are You?</h1>
       <h3>Dear Smartypants: Chose A Topic:</h3>
       <form action="" method="post">
-      <p>
+      
         <select class="form-control" name="quiz" id="quiz">
           <option value="1">Astronautics - Space-Travel</option>
           <option value="2">General History</option>
         </select>
-      </p>
+      
     </div>
   </div>
 </div>
