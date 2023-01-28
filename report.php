@@ -4,6 +4,9 @@
 <?php
 require "./includes/header.php";
 ?>
+<?php 
+require "./includes/db_connect.php";
+?>
 <?php
 require "./includes/tools.php.php";
 /*prettyPrint($_POST); */

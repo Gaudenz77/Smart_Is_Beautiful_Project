@@ -4,7 +4,9 @@
 <?php
 require "./includes/header.php";
 ?>
-
+<?php 
+require "./includes/db_connect.php";
+?>
 
 <main class="">
 <div class="container">
