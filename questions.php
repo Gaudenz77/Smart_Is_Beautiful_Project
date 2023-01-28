@@ -1,10 +1,13 @@
-<?php require "./html_head_tag.php";?>
+<?php require "./includes/html_head_tag.php";?>
 <body>
+<!-- HEAD TAG MIGHT BE INCLUDED DIRECTLY IN EACH PAGE // MUST BE TESTED, POSSIBLE ERRORS //-->
 <?php
 require "./includes/header.php";
 ?>
 <?php
 require "./includes/tools.php.php";
+/*prettyPrint($_POST); */
+/*echo print_r($_POST); */
 ?>
 
 
