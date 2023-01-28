@@ -5,7 +5,7 @@ require "./includes/header.php";
 ?>
 
 
-
+<main class="">
 <div class="container">
   <div class="row">
     <div class="col-sm bg-warning">
@@ -20,7 +20,7 @@ require "./includes/header.php";
     </div>
   </div>
 </div>
-
+</main>
 
 
 <?php
