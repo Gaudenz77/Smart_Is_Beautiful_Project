@@ -57,7 +57,7 @@ require "./includes/tools.php";
           <p>DumDeeDummDeeDai</p>
       </div>
       <div class="col-sm pt-3  order-first order-md-last">
-      <a class="btn btn-light" href='index.php'><i class="fa-solid fa-circle-chevron-left fa-3x"></i><p class="btnFont">BACK</p></a>
+      <a class="btn btnColor" href='index.php'><i class="fa-solid fa-circle-chevron-left fa-3x"></i><p class="btnFont">BACK</p></a>
       <button type="submit" class="btn btn-primary btn-lg"  role="button">Next Question</a>
       </div>
     </div>

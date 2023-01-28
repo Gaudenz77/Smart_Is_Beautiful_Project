@@ -7,7 +7,7 @@ require "./includes/header.php";
 <?php 
 require "./includes/db_connect.php";
 ?>
-<?php require "./includes/testquestionValidation.php";?>
+
 <?php
 require "./includes/tools.php";
 prettyPrint($_POST);
@@ -19,9 +19,9 @@ echo print_r($_POST);
   <div class="row">
     <div class="col-sm bg-warning">
       <h1 class="display-2"><b>Quiz:</b><br>Smart Is Beautiful ... Are You?</h1>
-      <h3>Dear Smartypants: Your Answer IS...: <?php echo $answer; ?></h3>
       
-        
+      <?php require "./includes/testquestionValidation.php";?>
+      <h3>Your Answer Is: <?php echo $answer; ?></h3> 
       
     </div>
   </div>
@@ -37,8 +37,8 @@ echo print_r($_POST);
           <p>DumDeeDummDeeDai</p>
       </div>
       <div class="col-sm pt-3  order-first order-md-last">
-      <a class="btn btn-light" href='questions.php'><i class="fa-solid fa-circle-chevron-left fa-3x"></i><p class="btnFont">BACK</p></a>
-      <a type="submit" class="btn btn-primary btn-lg"  role="button">Restart Quiz</a>
+      <a class="btn btnColor" href='questions.php'><i class="fa-solid fa-circle-chevron-left fa-3x"></i><p class="btnFont">BACK</p></a>
+      <a type="submit" class="btn btn-primary btn-lg" role="button">Restart Quiz</a>
       </div>
     </div>
   </div>  

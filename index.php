@@ -11,7 +11,7 @@ require "./includes/db_connect.php";
 <main class="">
 <div class="container">
   <div class="row">
-    <div class="col bg-warning m-4 p-4">
+    <div class="col m-4 p-4">
       <h1 class="display-2"><br>Smart Is Beautiful ... Are You?</h1>
       <h3>Dear Smartypants: Chose A Topic:</h3>
       <form action="questions.php" method="post">

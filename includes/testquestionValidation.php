@@ -20,13 +20,13 @@
 <?php
 if (isset($_POST['question1'])) {
     $correct_answer = "A. Chemical rockets";
-    /* $wrong_answer = "Your answer is incorrect."; */
+ 
     $answer = $_POST['question1'];
     if ( $answer == $correct_answer) {
-        $ok = "your answer is correct";
-        echo $ok;
+        
+        echo "<h3>Dear Smartypants, your answer is correct</h3>";
     } else{
-        echo "Your answer is incorrect.";
+        echo "<h3>Dear Smartypants, your answer is incorrect.</h3>";
     }
    
 }

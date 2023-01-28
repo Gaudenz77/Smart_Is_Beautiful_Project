@@ -27,9 +27,12 @@ width: 900px;
 
 .btnFont {
     font-size: 10px;
+   
 }
 
-
+.btnColor {
+    background-color: #cff4fc;
+}
 
 
 .footer {
