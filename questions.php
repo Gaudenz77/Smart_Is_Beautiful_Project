@@ -1,5 +1,6 @@
-<?php require "./includes//session_start.php";?>
+
 <?php require "./includes/html_head_tag.php";?>
+
 <body>
 <!-- HEAD TAG MIGHT BE INCLUDED DIRECTLY IN EACH PAGE // MUST BE TESTED, POSSIBLE ERRORS //-->
 <?php
@@ -16,7 +17,6 @@ require "./includes/tools.php";
 ?>
 <!-- <script>
 
-
 function validateForm() {
     var answer = document.getElementById("question1").value;
     if (answer == "") {
@@ -32,10 +32,10 @@ function validateForm() {
     <div class="col-sm">
       <h1 class="display-2"><b>Quiz:</b><br>Smart Is Beautiful ... Are You?</h1>
       <h3>Dear Smartypants: You Did Chose "Astronautics":</h3>
-      <h4 id="message"></h4>
+      
   <!-- Form FIELDS Start--------------------------------------------------------------------------------------- -->    
       <form action="report.php" method="post" onsubmit="return validateForm()"> 
-        
+      <h4 id="message"></h4>
             <div class="form-group p-4">
           <label for="question1">What is the primary propulsion method used by most spacecrafts for interplanetary travel?</label>
           <div class="form-check">
@@ -71,7 +71,7 @@ function validateForm() {
       </div>
       <div class="col-sm pt-3  order-first order-md-last">
       <a class="btn btnColor" href='index.php'><i class="fa-solid fa-circle-chevron-left fa-3x"></i><p class="btnFont">BACK</p></a>
-      <button type="submit" input type="submit"  class="btn btn-primary btn-lg"  role="button">Next Question</a>
+      <button type="submit" class="btn btn-primary btn-lg"  role="button">Next Question</a>
       </div>
     </div>
   </div>  
@@ -85,15 +85,19 @@ function validateForm() {
 
 
 
-
-<?php
-/* require "./includes/footer.php"; */
-?>
 </form>
+
+
+
+
   <!-- Form  End--------------------------------------------------------------------------------------- -->    
 
 
-  
+  <script>
+    window.onload = function() {
+    function validateForm();  
+}
+  </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
 </html>
