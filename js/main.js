@@ -1,3 +1,15 @@
+  // FUNCTION VALIDATION IF SET---------------------------------------------------------------------------------------------
+  debugger;
+  function validateForm() {
+    
+    var answer = document.getElementById("question1").value;
+    if (answer == "") {
+        document.getElementById("message").innerHTML = "Please fill in the answer";
+        return false;
+    }
+}
+
+
 // FUNCTION DELETE ALL COOKIES ---------------------------------------------------------------------------------------------
 
 /* function deleteAllCookies() {
@@ -12,3 +24,5 @@
     window.location.href = "index.php";
   
   } */
+
+
