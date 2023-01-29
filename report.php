@@ -16,7 +16,7 @@ prettyPrint($_POST);
 echo print_r($_POST);
 ?>
 
-<main class="animate__animated animate__lightSpeedInRight">
+<main class="animate__animated animate__lightSpeedInRight animate__slow">
 <div class="container">
   <div class="row">
     <div class="col-sm">

@@ -13,7 +13,7 @@ function validateForm() {
       }
     }
     if (!selected) {
-      errorMessage.innerHTML = "<h3 class='animate__animated animate__lightSpeedInRight animate__slower'>So Smart, But No Answer Chosen? Come On: Chose You Smartypants!</h3>";
+      errorMessage.innerHTML = "<h3 class='animate__animated animate__lightSpeedInRight animate__slow'>So Smart, But No Answer Chosen? Come On: Chose You Smartypants!</h3>";
       isValid = false;
     } else {
       errorMessage.innerHTML = "";
