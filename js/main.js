@@ -1,5 +1,5 @@
   // FUNCTION VALIDATION IF SET---------------------------------------------------------------------------------------------
-  //debugger;
+  // debugger;
   function validateForm() {
     console.log("validateForm");
     var answer = document.getElementById("question1").value;
@@ -8,8 +8,6 @@
         return false;
     }
 }
-
-
 
 // FUNCTION DELETE ALL COOKIES ---------------------------------------------------------------------------------------------
 

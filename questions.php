@@ -1,4 +1,4 @@
-
+<?php require "./includes//session_start.php";?>
 <?php require "./includes/html_head_tag.php";?>
 
 <body>
@@ -15,16 +15,6 @@ require "./includes/tools.php";
 /*prettyPrint($_POST); */
 /*echo print_r($_POST); */
 ?>
-<!-- <script>
-
-function validateForm() {
-    var answer = document.getElementById("question1").value;
-    if (answer == "") {
-        document.getElementById("message").innerHTML = "Please fill in the answer";
-        return false;
-    }
-}
-</script> -->
 
 <main class="">
 <div class="container">
@@ -77,27 +67,11 @@ function validateForm() {
   </div>  
 </div>
 
-
-
-
-
-
-
-
-
 </form>
 
-
-
-
   <!-- Form  End--------------------------------------------------------------------------------------- -->    
-
-
-  <script>
-    window.onload = function() {
-    function validateForm();  
-}
-  </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-  </body>
+    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script defer src="/js/main.js"></script>  
+</body>
 </html>
