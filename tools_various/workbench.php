@@ -1,7 +1,7 @@
 <!-- Badge Html -->
 <i>Dash badge</i>
 
-<a href="https://github.com/Gaudenz77/Smart_Is_Beautiful_Project"><img src="https://img.shields.io/badge/Gaudenz77-Smart__Is__Beautiful__Project-eb6b34?style=for-the-badge" alt="Gaudenz77 - Smart_Is_Beautiful_Project"></a>
+<a href='https://github.com/Gaudenz77/Smart_Is_Beautiful_Project"><img src="https://img.shields.io/badge/Gaudenz77-Smart__Is__Beautiful__Project-eb6b34?style=for-the-badge" alt="Gaudenz77 - Smart_Is_Beautiful_Project"></a>
 
 <i>Query parameter badge</i>
 
@@ -44,5 +44,8 @@ _Query parameter badge_
   <label class="form-check-label" for="option4">Spain</label>
 </div>';
 
+
+"<i class='fa-solid fa-face-laugh-wink'></i>
+<i class='fa-solid fa-poo'></i>"
 
 ?>

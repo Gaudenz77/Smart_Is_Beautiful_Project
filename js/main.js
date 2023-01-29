@@ -1,17 +1,30 @@
   // FUNCTION VALIDATION IF SET---------------------------------------------------------------------------------------------
   // debugger;
-  function validateForm() {
-    console.log("validateForm");
-    var answer = document.getElementById("question1").value;
-    if (answer == "") {
-        document.getElementById("message").innerHTML = "Please fill in the answer";
-        return false;
+
+function validateForm() {
+    var isValid = true;
+    var errorMessage = document.getElementById("errorMessage");
+    var radioButtons = document.getElementsByName("question1");
+    var selected = false;
+    for (var i = 0; i < radioButtons.length; i++) {
+      if (radioButtons[i].checked) {
+        selected = true;
+        break;
+      }
     }
-}
+    if (!selected) {
+      errorMessage.innerHTML = "<h3 class='animate__animated animate__lightSpeedInRight animate__slower'>So Smart, But No Answer Chosen? Come On: Chose You Smartypants!</h3>";
+      isValid = false;
+    } else {
+      errorMessage.innerHTML = "";
+    }
+    return isValid;
+  }
+
 
 // FUNCTION DELETE ALL COOKIES ---------------------------------------------------------------------------------------------
 
-/* function deleteAllCookies() {
+function deleteAllCookies() {
     const cookies = document.cookie.split(";");
   
     for (let i = 0; i < cookies.length; i++) {
@@ -22,6 +35,6 @@
     }
     window.location.href = "index.php";
   
-  } */
+  }
 
 
