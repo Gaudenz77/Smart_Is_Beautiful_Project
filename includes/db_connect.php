@@ -24,5 +24,16 @@ function fetchquestionById($id, $dbConnection) {
 
 /* ONLY OPEN WHREN SURE AND SERIOUS SELECT statement  -----  ONLY OPEN WHREN SURE AND SERIOUS SELECT statement ONLY OPEN WHREN SURE AND SERIOUS SELECT statement  -----  ONLY OPEN WHREN SURE AND SERIOUS SELECT statement */
 
+/* Select Fields in Index.php, Function----------------------------------------------------------*/
+function getTopics($dbConnection) {
+    try {
+        $query = $dbConnection->query("SELECT DISTINCT topic FROM questions");
+      return $query->fetchAll(PDO::FETCH_COLUMN);
+    } catch (PDOException $e) {
+      echo "Error: " . $e->getMessage();
+      exit;
+    }
+  }
+
 
 ?>

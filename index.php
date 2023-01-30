@@ -8,16 +8,28 @@ require "./includes/header.php";
 ?>
 <?php 
 require "./includes/db_connect.php"; 
-echo "$dbHost $dbname $dbUser $dbPassword";
+/* echo "$dbHost $dbname $dbUser $dbPassword"; */ // DEV ONLY
+$topics = getTopics($dbConnection);
 
-$query = $dbConnection->query("SELECT * FROM `questions`");
-$row = $query->fetch(PDO::FETCH_ASSOC);
+/* --------------------------------------------------------------------------------------------------without PHP PDO FUNCTION START */
+/* try { */
+    /* $dbConnection = new PDO("mysql:host=$dbHost;dbname=$dbname;charset=utf8mb4", $dbUser, $dbPass);
+    $dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); */
+  
+/*   $query = $dbConnection->query("SELECT DISTINCT topic FROM questions");
+} catch (PDOException $e) {
+  echo "Error: " . $e->getMessage();
+  exit;
+} */
+/* ----------------------------------------------------------------------------------------------------without PHP PDO FUNCTION END */
 ?>
 
 <?php
 require "./includes/tools.php";
-print_r($row);
-prettyPrint($row);
+/* print_r($row); */
+/* echo "<br><br>";
+print_r($_SESSION); */
+/* prettyPrint($row); */
 ?>
 
 <main class="animate__animated animate__lightSpeedInRight animate__slow">
@@ -27,12 +39,11 @@ prettyPrint($row);
       <h1 class="display-2"><br>Smart Is Beautiful ... Are You?</h1>
       <h3>Dear Smartypants, Chose A Topic:</h3>
       <form action="questions.php" method="post">
-      
-        <select class="form-control" name="quiz" id="quiz">
-          <option value="topic"><?php echo $row['topic'];?></option>
-          <!-- <option value="general_history">General History</option> -->
+        <select class="form-control" name="topic" id="topic">
+        <?php foreach ($topics as $topic): ?>
+        <option value="<?= $topic ?>"><?= $topic ?></option>
+        <?php endforeach; ?>
         </select>
-      
     </div>
   </div>
 </div>
