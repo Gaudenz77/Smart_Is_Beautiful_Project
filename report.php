@@ -18,8 +18,8 @@ echo print_r($_POST);
 
 <main class="animate__animated animate__lightSpeedInRight animate__slow">
 <div class="container">
-  <div class="row">
-    <div class="col-sm">
+<div class="row justify-content-center">
+    <div class="col-sm-8">
       <h1 class="display-2">Smart Is Beautiful ... Are You?</h1>
       
       <?php require "./includes/testquestionValidation.php";?>

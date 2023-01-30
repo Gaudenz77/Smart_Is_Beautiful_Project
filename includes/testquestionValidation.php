@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['question1'])) {
-    $correct_answer = "A. Chemical Rockets";
+    $correct_answer = "answer-1";
  
     $answer = $_POST['question1'];
     if ( $answer == $correct_answer) {

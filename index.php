@@ -9,6 +9,8 @@ require "./includes/header.php";
 <?php 
 require "./includes/db_connect.php"; 
 /* echo "$dbHost $dbname $dbUser $dbPassword"; */ // DEV ONLY
+
+// getTopics function in db_connect.php
 $topics = getTopics($dbConnection);
 
 /* --------------------------------------------------------------------------------------------------without PHP PDO FUNCTION START */
@@ -22,6 +24,7 @@ $topics = getTopics($dbConnection);
   exit;
 } */
 /* ----------------------------------------------------------------------------------------------------without PHP PDO FUNCTION END */
+
 ?>
 
 <?php
@@ -34,14 +37,14 @@ print_r($_SESSION); */
 
 <main class="animate__animated animate__lightSpeedInRight animate__slow">
 <div class="container">
-  <div class="row">
-    <div class="col m-4 p-4">
+<div class="row justify-content-center">
+    <div class="col-sm-8 m-4 p-4">
       <h1 class="display-2"><br>Smart Is Beautiful ... Are You?</h1>
       <h3>Dear Smartypants, Chose A Topic:</h3>
       <form action="questions.php" method="post">
         <select class="form-control" name="topic" id="topic">
         <?php foreach ($topics as $topic): ?>
-        <option value="<?= $topic ?>"><?= $topic ?></option>
+        <option value="<?= $topic ?>"><?= $topic ?></option> <!-- <?= $topic ?>"><?= $topic ?> is shorthand for <?php echo $topic ?>"><?php echo  $topic ?> -->
         <?php endforeach; ?>
         </select>
     </div>

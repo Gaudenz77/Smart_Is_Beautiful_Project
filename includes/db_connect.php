@@ -13,12 +13,11 @@ $dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // Query Functions
 function fetchquestionById($id, $dbConnection) {
-    $query = $dbConnection->query("SELECT * From `questions` WHERE `id` = $id");
-    $row = $query->fetch(PDO::FETCH_ASSOC);
-    /* print_r($row); */
-    // Example row = array() Array ( [id] => 503 [topic] => astronautics [question_text] => What is the name of the first privately-funded spacecraft to reach orbit? [answer-1] => Space Shuttle [answer-2] => SpaceX [answer-3] => Apollo [answer-4] => Orion [answer-5] => [correct] => answer-2 ) 
-    return $row; // fetches Row Data
-
+$query = $dbConnection->query("SELECT * From `questions` WHERE `id` = $id");
+$row = $query->fetch(PDO::FETCH_ASSOC);
+/* print_r($row); */
+// Example row = array() Array ( [id] => 503 [topic] => astronautics [question_text] => What is the name of the first privately-funded spacecraft to reach orbit? [answer-1] => Space Shuttle [answer-2] => SpaceX [answer-3] => Apollo [answer-4] => Orion [answer-5] => [correct] => answer-2 ) 
+return $row; // fetches Row Data
 } 
 
 
@@ -26,14 +25,31 @@ function fetchquestionById($id, $dbConnection) {
 
 /* Select Fields in Index.php, Function----------------------------------------------------------*/
 function getTopics($dbConnection) {
-    try {
-        $query = $dbConnection->query("SELECT DISTINCT topic FROM questions");
-      return $query->fetchAll(PDO::FETCH_COLUMN);
-    } catch (PDOException $e) {
-      echo "Error: " . $e->getMessage();
-      exit;
-    }
+try {
+    // above give topics originallyy set in database enum field 
+    /*  $query = $dbConnection->query("SELECT DISTINCT topic FROM questions");
+    return $query->fetchAll(PDO::FETCH_COLUMN); */
+    $query = $dbConnection->query("SELECT DISTINCT topic FROM questions");
+    $topics = $query->fetchAll(PDO::FETCH_COLUMN);
+    // uc words does Capitalize first letter of topic enum option
+    return array_map('ucwords', $topics);
+} catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
+    exit;
+}
+}
+
+ /* Select total questions from questions table data in  Function----------------------------------------------------------*/ 
+  function getTotalQuestions($dbConnection) {
+  try {
+    $query = $dbConnection->query("SELECT COUNT(*) FROM questions");
+    $totalQuestions = $query->fetchColumn();
+    return $totalQuestions;
+  } catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
+    exit;
   }
+}
 
 
 ?>

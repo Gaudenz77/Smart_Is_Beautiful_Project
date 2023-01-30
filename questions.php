@@ -12,12 +12,10 @@ require "./includes/db_connect.php";
 
 //print_r($row); 
 $id = 501;
-/* $currentQuestionIndex;
-$totalQuestions = 20;
-$statement = "Question " . ($currentQuestionIndex + 1) . " of " . $totalQuestions;
-$quiz = $id; */
 
+$quiz = $id; 
 
+// fetchquestionById function in db_connect.php
 $question = fetchquestionById($id, $dbConnection);
 try {
 $query = $dbConnection->query("SELECT COUNT(*) From `questions`");
@@ -28,7 +26,36 @@ $query = $dbConnection->query("SELECT COUNT(*) From `questions`");
     $questionCount = 0;
 }
 $currentQuestionIndex = 0;
-/* echo "Number of questions: " . ($questionCount - 1); */
+echo "Number of questions: " . ($questionCount);
+// total questions function in db_connect.php
+$totalQuestions = getTotalQuestions($dbConnection);
+
+if (isset($_POST['submit'])) {
+  $selectedOption = $_POST['options'];
+  try {
+    $query = $dbConnection->prepare("SELECT answer FROM questions WHERE id = ?");
+    $query->execute([$currentQuestionId]);
+    $correctAnswer = $query->fetchColumn();
+    if ($selectedOption == $correctAnswer) {
+      // go to the next question
+      $currentQuestionIndex++;
+      if ($currentQuestionIndex < $totalQuestions) {
+        $currentQuestionId = $currentQuestionIndex + 1;
+        // fetch the next question and options
+        // ...
+      } else {
+        // quiz is finished
+        // ...
+      }
+    } else {
+      // incorrect answer
+      // ...
+    }
+  } catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
+    exit;
+  }
+}
 
 
 
@@ -45,16 +72,15 @@ require "./includes/tools.php";
 
 <main class="animate__animated animate__lightSpeedInRight animate__slow">
 <div class="container">
-  <div class="row">
-    <div class="col-sm">
+  <div class="row justify-content-center">
+    <div class="col-sm-8">
       <h1 class="display-2"><b>Quiz:</b><br>Smart Is Beautiful ... Are You?</h1>
       <h3>Dear Smartypants: You Did Chose <?php echo $question['topic'];?>:</h3>
       <p id="errorMessage"></p>
 
-
-  <p><?php echo ($currentQuestionIndex + 1); ?> of <?php echo ($questionCount - 1); ?></p>
+  <p>Question <?php echo ($currentQuestionIndex + 1); ?> of <?php echo $totalQuestions; ?></p>
       <label for="question1"><?php echo $question['question_text'];?></label>
-      <form id="quiz-form" action="questions.php" method="post" onsubmit="return validateForm();return navigate('next');">
+      <form id="quiz-form" action="questions.php" method="post" >  <!-- return navigate('next'); -->
       
       <?php
       // generate answer-radio-buttons with labels
@@ -74,6 +100,7 @@ require "./includes/tools.php";
 
           if($correct === $answerColumnName) $value = 1;
           else $value = 0;
+          // MAIN STRUCTUR RADIO BUTTONS, EXPANDABLE
           echo "<div class='form-check'>
           <input class='form-check-input' type='radio' name='single-choice' id='$answerColumnName' value='$value'>
           <label class='form-check-label' for='single-choice-0'>$answerText</label></div>";
