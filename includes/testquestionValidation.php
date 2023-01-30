@@ -12,3 +12,15 @@ if (isset($_POST['question1'])) {
    
 }
 ?>
+<?php
+/* if (isset($_POST['topic'])) {
+  $topic = $_POST['topic'];
+  if ($topic == 'topic_a') {
+    // redirect to topic A questions page
+    header("Location: topic_a_questions.php");
+  } elseif ($topic == 'topic_b') {
+    // redirect to topic B questions page
+    header("Location: topic_b_questions.php");
+  }
+} */
+?>

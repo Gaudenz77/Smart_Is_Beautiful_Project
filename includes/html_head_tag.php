@@ -18,7 +18,8 @@
       body {
         font-weight:bold;
         font-family: 'Oxygen', sans-serif;
-        margin-top: 200px;  
+        margin-top: 160px;  
+        /* margin-bottom: 200px;  */ 
         }
 
       #errorMessage {

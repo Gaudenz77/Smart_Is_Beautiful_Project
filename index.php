@@ -7,14 +7,17 @@
 require "./includes/header.php";
 ?>
 <?php 
-/* require "./includes/db_connect.php"; */
+require "./includes/db_connect.php"; 
+echo "$dbHost $dbname $dbUser $dbPassword";
+
+$query = $dbConnection->query("SELECT * FROM `questions`");
+$row = $query->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <?php
 require "./includes/tools.php";
-/* prettyPrint($_SESSION); */
-/* prettyPrint($_POST); */
-/*echo print_r($_POST); */
+print_r($row);
+prettyPrint($row);
 ?>
 
 <main class="animate__animated animate__lightSpeedInRight animate__slow">
@@ -26,8 +29,8 @@ require "./includes/tools.php";
       <form action="questions.php" method="post">
       
         <select class="form-control" name="quiz" id="quiz">
-          <option value="1">Astronautics - Space-Travel</option>
-          <option value="2">General History</option>
+          <option value="topic"><?php echo $row['topic'];?></option>
+          <!-- <option value="general_history">General History</option> -->
         </select>
       
     </div>
@@ -41,7 +44,7 @@ require "./includes/tools.php";
       <div class="col-sm">Left</div>
       <div class="col-sm">
           <h1>Footer</h1>
-          <p>DumDeeDummDeeDai</p>
+          <p><?php echo  "© " . date("Y/m/d") ." &#129322 " ?></p>
       </div>
       <div class="col-sm pt-3  order-first order-md-last">
       <!-- <a class="btn btnColor" href='index.php'><i class="fa-solid fa-circle-chevron-left fa-3x"></i><p class="btnFont">BACK</p></a> -->

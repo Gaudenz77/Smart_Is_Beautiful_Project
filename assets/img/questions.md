@@ -44,12 +44,12 @@ C. Solar sails<br>
 D. Ion thrusters<br>
 (A) Chemical rockets<br></li><br>
 
-<li>Which of the following is not one of the Apollo missions that successfully landed astronauts on the Moon?<br>
+<li>Which Apollo mission did not land on the Moon?<br>
 A. Apollo 11<br>
 B. Apollo 12<br>
 C. Apollo 13<br>
 D. Apollo 14<br>
-(D) Apollo 14<br></li><br>
+() Apollo 13<br></li><br>
 
 <li>What is the name of the first privately-funded spacecraft to reach orbit?<br>
 A. Space Shuttle<br>

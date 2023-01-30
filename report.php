@@ -36,7 +36,7 @@ echo print_r($_POST);
       <div class="col-sm">Left</div>
       <div class="col-sm">
           <h1>Footer</h1>
-          <p>DumDeeDummDeeDai</p>
+          <p><?php echo  "© " . date("Y/m/d") ." &#129322"?></p>
       </div>
       <div class="col-sm pt-3  order-first order-md-last">
       <a class="btn btnColor" href='questions.php'><i class="fa-solid fa-circle-chevron-left fa-3x"></i><p class="btnFont">BACK</p></a>
