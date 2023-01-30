@@ -29,6 +29,12 @@ $query = $dbConnection->query("SELECT COUNT(*) From `questions`");
 }
 $currentQuestionIndex = 0;
 /* echo "Number of questions: " . ($questionCount - 1); */
+
+
+
+
+
+
 ?>
 <?php
 require "./includes/tools.php";
@@ -58,9 +64,8 @@ require "./includes/tools.php";
       for ($a = 1; $a <= 5; $a++) {
         // combine for $answerColumnName the name of the table-row "answer-n"
         $answerColumnName = "answer-" . $a;
-        // if there  is an answer
+        // if there is an answer
 
-       
         // get the Name of the correct answer - row in $correct $question['answerColumnName']
 
         if(isset($question[$answerColumnName])  && $question[$answerColumnName] !== '') {
@@ -75,7 +80,6 @@ require "./includes/tools.php";
 
         }
 
-        
       }
 
       ?>
