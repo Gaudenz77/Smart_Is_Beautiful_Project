@@ -2,6 +2,7 @@
 <?php require "./includes/html_head_tag.php";?>
 <body>
 <!-- HEAD TAG MIGHT BE INCLUDED DIRECTLY IN EACH PAGE // MUST BE TESTED, POSSIBLE ERRORS //-->
+<!-- Everything Works Til Now, Timestamp: Jan 30 08:23 -->
 <?php
 require "./includes/header.php";
 ?>
