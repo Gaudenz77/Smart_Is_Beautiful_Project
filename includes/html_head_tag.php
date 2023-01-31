@@ -18,12 +18,14 @@
       body {
         font-weight:bold;
         font-family: 'Oxygen', sans-serif;
-        margin-top: 160px;  
-        /* margin-bottom: 200px;  */ 
+        margin-top: 40vh;  
+        margin-bottom: 220px;  
         }
 
-      #errorMessage {
+      /* #errorMessage {
         color: rgb(106, 177, 0);
-        }
+        font-size: 1000px;
+        font-weight: bold;
+        } */
     </style>
 </head>

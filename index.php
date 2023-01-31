@@ -1,4 +1,5 @@
-<?php require "./includes//session_start.php";?>
+<?php /* require "./includes/session_start.php"; */?>
+<?php require "./includes/data_collector.php";?>
 <?php require "./includes/html_head_tag.php";?>
 <body>
 <!-- HEAD TAG MIGHT BE INCLUDED DIRECTLY IN EACH PAGE // MUST BE TESTED, POSSIBLE ERRORS //-->
@@ -7,7 +8,8 @@
 require "./includes/header.php";
 ?>
 <?php 
-require "./includes/db_connect.php"; 
+require "./includes/db_connect.php";
+
 /* echo "$dbHost $dbname $dbUser $dbPassword"; */ // DEV ONLY
 
 // getTopics function in db_connect.php
@@ -28,48 +30,84 @@ $topics = getTopics($dbConnection);
 ?>
 
 <?php
-require "./includes/tools.php";
+/* require "./includes/tools.php"; */
 /* print_r($row); */
 /* echo "<br><br>";
 print_r($_SESSION); */
-/* prettyPrint($row); */
+/* prettyPrint($_SESSION); */
 ?>
+<main2>
+<div class="container">
+<div class="row justify-content-center">
+  <div class="col-sm-8 m-4 p-4">
+  <h1 class="display-2"><b>Smart Is Beautiful</b><br> ... Are You?</h1>
+      <h3>Dear Smartypants, Chose A Topic:</h3>
+      <form  id="quiz-form" action="questions.php" method="post" onsubmit="return navigate('next');">
+        <select class="form-control" name="topic" id="topic">
+       <?php foreach ($topics as $topic): ?>
+        <option value="<?= $topic ?>"><?= $topic ?></option> <?= $topic ?>"><?= $topic ?> is shorthand for <?php echo $topic ?>"><?php echo  $topic ?> 
+        <?php endforeach; ?> 
+     </select>
+<label style="margin-top:20px;" for="questionNum" class="form-label">Number of Questions</label>
+<input style="width:100px;" type="number" class="form-control" id="questionNum" name="questionNum" min="5" max="40" value="10">
 
-<main class="animate__animated animate__lightSpeedInRight animate__slow">
+<input type="hidden" id="lastQuestionIndex" name="lastQuestionIndex" value="-1">
+<input type="hidden" id="indexStep" name="indexStep" value="1">
+
+<p id="validation-warning" class="warning"></p>
+    </div>
+  </div>
+</div>
+</main2>
+
+
+
+
+<!-- <main class="animate__animated animate__lightSpeedInRight animate__slow">
 <div class="container">
 <div class="row justify-content-center">
     <div class="col-sm-8 m-4 p-4">
       <h1 class="display-2"><br>Smart Is Beautiful ... Are You?</h1>
       <h3>Dear Smartypants, Chose A Topic:</h3>
       <form action="questions.php" method="post">
-        <select class="form-control" name="topic" id="topic">
-        <?php foreach ($topics as $topic): ?>
-        <option value="<?= $topic ?>"><?= $topic ?></option> <!-- <?= $topic ?>"><?= $topic ?> is shorthand for <?php echo $topic ?>"><?php echo  $topic ?> -->
-        <?php endforeach; ?>
-        </select>
+        <select class="form-control" name="topic" id="topic"> -->
+       <!--  <?php foreach ($topics as $topic): ?>
+        <option value="<?= $topic ?>"><?= $topic ?></option> <?= $topic ?>"><?= $topic ?> is shorthand for <?php echo $topic ?>"><?php echo  $topic ?> 
+        <?php endforeach; ?> 
+     <!--    </select>
     </div>
   </div>
 </div>
-</main>
+</main> -->
 
 <div class="footer">
   <div class="container">
     <div class="row text-center">
-      <div class="col-sm">Left</div>
+    
       <div class="col-sm">
           <h1>Footer</h1>
+          
           <p><?php echo  "© " . date("Y/m/d") ." &#129322 " ?></p>
       </div>
       <div class="col-sm pt-3  order-first order-md-last">
-      <!-- <a class="btn btnColor" href='index.php'><i class="fa-solid fa-circle-chevron-left fa-3x"></i><p class="btnFont">BACK</p></a> -->
-      <button type="submit" class="btn btn-primary btn-lg"  role="button">Start Quiz</a>
+      <button type="submit" class="btn btnColor" role="button"><i class="fa-solid fa-circle-play fa-4x"><p class="btnFont py-1">Start Quiz</p></i>
+      <!-- <button type="submit" class="btn btn-primary btn-lg" role="button">Start Quiz</a> -->
+        </div>
+      </form>
+
+
+      <div class="col-sm">
+<!-- Include search bar -->
+
+<?php require "./includes/serachbar.php";?>
+
       </div>
     </div>
   </div>  
 </div>
 
-</form>
-
+<p>
+          
 <script src="/js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>

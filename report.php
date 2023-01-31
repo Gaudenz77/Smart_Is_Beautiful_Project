@@ -10,10 +10,10 @@ require "./includes/header.php";
 ?>
 
 <?php
-require "./includes/tools.php";
+/* require "./includes/tools.php";
 /* prettyPrint($_SESSION); */
-prettyPrint($_POST);
-echo print_r($_POST);
+/* prettyPrint($_POST); */
+/* echo print_r($_POST); */
 ?>
 
 <main class="animate__animated animate__lightSpeedInRight animate__slow">
@@ -33,7 +33,13 @@ echo print_r($_POST);
 <div class="footer">
   <div class="container">
     <div class="row text-center">
-      <div class="col-sm">Left</div>
+      <div class="col-sm">
+        <!-- Include search bar -->
+
+<?php require "./includes/serachbar.php";?>
+
+
+      </div>
       <div class="col-sm">
           <h1>Footer</h1>
           <p><?php echo  "© " . date("Y/m/d") ." &#129322"?></p>

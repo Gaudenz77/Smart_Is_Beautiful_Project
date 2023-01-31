@@ -13,13 +13,31 @@ function validateForm() {
       }
     }
     if (!selected) {
-      errorMessage.innerHTML = "<h3 class='animate__animated animate__lightSpeedInRight animate__slow'>So Smart, But No Answer Chosen? Come On: Chose You Smartypants!</h3>";
+      errorMessage.innerHTML = "<p class='animate__animated animate__lightSpeedInRight animate__slow'>So Smart, But No Answer Chosen? Come On: Chose You Smartypants!</p>";
       isValid = false;
     } else {
       errorMessage.innerHTML = "";
     }
     return isValid;
   }
+
+// FUNCTION SEARCHBAR QUERY ON NEW PAGE RESULT ---------------------------------------------------------------------------------------------
+function submitForm() {
+  const searchInput = document.querySelector("#search-input").value;
+  const searchSelect = document.querySelector("#search-select").value;
+  let searchURL = "";
+  
+  if (searchSelect === "google") {
+    searchURL = `https://www.google.com/search?q=${searchInput}`;
+  } else if (searchSelect === "wikipedia") {
+    searchURL = `https://en.wikipedia.org/wiki/${searchInput}`;
+  }
+  
+  window.open(searchURL, "_blank");
+}
+
+
+
 
 
 // FUNCTION DELETE ALL COOKIES ---------------------------------------------------------------------------------------------

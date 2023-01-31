@@ -1,4 +1,5 @@
-<?php require "./includes//session_start.php";?>
+<?php /* require "./includes/session_start.php"; */?>
+<?php require "./includes/data_collector.php";?>
 <?php require "./includes/html_head_tag.php";?>
 <body>
 <!-- HEAD TAG MIGHT BE INCLUDED DIRECTLY IN EACH PAGE // MUST BE TESTED, POSSIBLE ERRORS //-->
@@ -8,12 +9,11 @@ require "./includes/header.php";
 <?php 
 require "./includes/db_connect.php";
 
+
 /* echo "$dbHost $dbname $dbUser $dbPassword"; */ // TEST DEV ONLY
 
 //print_r($row); 
 $id = 501;
-
-$quiz = $id; 
 
 // fetchquestionById function in db_connect.php
 $question = fetchquestionById($id, $dbConnection);
@@ -26,7 +26,8 @@ $query = $dbConnection->query("SELECT COUNT(*) From `questions`");
     $questionCount = 0;
 }
 $currentQuestionIndex = 0;
-echo "Number of questions: " . ($questionCount);
+
+/* echo "Number of questions: " . ($questionCount); */
 // total questions function in db_connect.php
 $totalQuestions = getTotalQuestions($dbConnection);
 
@@ -57,30 +58,27 @@ if (isset($_POST['submit'])) {
   }
 }
 
-
-
-
-
-
 ?>
+
+
 <?php
-require "./includes/tools.php";
+/* require "./includes/tools.php"; */
 /* print_r($row); */
 /* print_r($_SESSION);"<br>"; */
-/* prettyPrint($row); */
+
 ?>
 
 <main class="animate__animated animate__lightSpeedInRight animate__slow">
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-sm-8">
-      <h1 class="display-2"><b>Quiz:</b><br>Smart Is Beautiful ... Are You?</h1>
+      <h1 class="display-2"><b>Smart Is Beautiful</b><br> ... Are You?</h1>
       <h3>Dear Smartypants: You Did Chose <?php echo $question['topic'];?>:</h3>
       <p id="errorMessage"></p>
 
-  <p>Question <?php echo ($currentQuestionIndex + 1); ?> of <?php echo $totalQuestions; ?></p>
+  <p>Question <?php echo ($currentQuestionIndex + 1); ?> of <?php echo $totalQuestions; ?></p>   <!-- <?php /* echo quiz['questionNum'];  */?> -->
       <label for="question1"><?php echo $question['question_text'];?></label>
-      <form id="quiz-form" action="questions.php" method="post" >  <!-- return navigate('next'); -->
+      <form id="quiz-form" action="questions.php" method="post" onsubmit="return validateForm();">  <!-- return navigate('next'); -->
       
       <?php
       // generate answer-radio-buttons with labels
@@ -110,7 +108,17 @@ require "./includes/tools.php";
       }
 
       ?>
-  <!-- Form FIELDS Start--------------------------------------------------------------------------------------- -->    
+
+
+
+<input type="hidden" id="questionNum" value="15">
+<input type="hidden" id="lastQuestionIndex" name="lastQuestionIndex" value="-1">
+<input type="hidden" id="indexStep" name="indexStep" value="1">
+
+
+
+
+  <!-- Form FIELDS Start My First Version, Working With Javascript Val onsubmit="return validateForm();"--------------------------------------------------------------------------------------- -->    
       <!-- <form id="" action="question.php" method="post" onsubmit="return validateForm();"> 
       <p id="errorMessage"></p>
             <div class="form-group p-4">
@@ -138,17 +146,23 @@ require "./includes/tools.php";
   </div>
 </div>
 </main>
-
+<!-- FOOTER START ------------------------------------------------------------------------------------------------------>
 <div class="footer">
   <div class="container">
     <div class="row text-center">
-      <div class="col-sm">Left</div>
+      <div class="col-sm">
+<!-- Include search bar -->
+<?php require "./includes/serachbar.php";?>
+
+
+
+      </div>
       <div class="col-sm">
           <h1>Footer</h1>
           <p><?php echo  "© " . date("Y/m/d") ." &#129322 " ?></p>
       </div>
       <div class="col-sm pt-3  order-first order-md-last">
-      <a class="btn btnColor" href='index.php'><i class="fa-solid fa-circle-chevron-left fa-3x"></i><p class="btnFont">BACK</p></a>
+      <a class="btn btnColor" href='index.php'><i class="fa-solid fa-circle-chevron-left fa-3x"><p class="btnFont py-1">BACK</p></i></a>
       <button type="submit" class="btn btn-primary btn-lg" role="button">Next Question</a>
       </div>
     </div>
