@@ -8,7 +8,7 @@ include './includes/tools.php';
 if (isset($_SESSION["quiz"]))  $quiz = $_SESSION["quiz"];
     else $quiz = null;
   
-    prettyPrint($quiz, '$quiz =');
+    /* prettyPrint($quiz, '$quiz ='); */
 
 
     if (isset($_POST["lastQuestionIndex"])) {
@@ -20,13 +20,13 @@ if (isset($_SESSION["quiz"]))  $quiz = $_SESSION["quiz"];
         $lastQuestionIndex = -1;
     }
 
-    prettyPrint($lastQuestionIndex, '$lastQuestionIndex =');
+    /* prettyPrint($lastQuestionIndex, '$lastQuestionIndex ='); */
 
 
 // https://www.php.net/manual/en/reserved.variables.server.php
     $scriptname = $_SERVER['SCRIPT_NAME'];
    /*  echo "scriptName = " . $scriptname. "\n"; */
-    prettyPrint($scriptname, '$scriptname =');
+    /* prettyPrint($scriptname, '$scriptname ='); */
 
 // https://www.php.net/manual/en/function.str-contains.php
 // index.php uses................................................................

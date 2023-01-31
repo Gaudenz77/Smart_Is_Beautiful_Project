@@ -1,12 +1,13 @@
-<?php /* require "./includes/session_start.php"; */?>
 <?php require "./includes/data_collector.php";?>
 <?php require "./includes/html_head_tag.php";?>
+
 <body>
 <!-- HEAD TAG MIGHT BE INCLUDED DIRECTLY IN EACH PAGE // MUST BE TESTED, POSSIBLE ERRORS //-->
 <!-- Everything Works Til Now, Timestamp: Jan 30 08:23 -->
 <?php
 require "./includes/header.php";
 ?>
+
 <?php 
 require "./includes/db_connect.php";
 
@@ -26,7 +27,6 @@ $topics = getTopics($dbConnection);
   exit;
 } */
 /* ----------------------------------------------------------------------------------------------------without PHP PDO FUNCTION END */
-
 ?>
 
 <?php
@@ -36,7 +36,7 @@ $topics = getTopics($dbConnection);
 print_r($_SESSION); */
 /* prettyPrint($_SESSION); */
 ?>
-<main2>
+<main2 class="animate__animated animate__lightSpeedInRight animate__slow">
 <div class="container">
 <div class="row justify-content-center">
   <div class="col-sm-8 m-4 p-4">
@@ -60,9 +60,6 @@ print_r($_SESSION); */
 </div>
 </main2>
 
-
-
-
 <!-- <main class="animate__animated animate__lightSpeedInRight animate__slow">
 <div class="container">
 <div class="row justify-content-center">
@@ -74,40 +71,39 @@ print_r($_SESSION); */
        <!--  <?php foreach ($topics as $topic): ?>
         <option value="<?= $topic ?>"><?= $topic ?></option> <?= $topic ?>"><?= $topic ?> is shorthand for <?php echo $topic ?>"><?php echo  $topic ?> 
         <?php endforeach; ?> 
-     <!--    </select>
+        </select>
     </div>
   </div>
 </div>
 </main> -->
 
+<!-- FOOTER START ------------------------------------------------------------------------------------------------------>
 <div class="footer">
   <div class="container">
     <div class="row text-center">
     
       <div class="col-sm">
           <h1>Footer</h1>
-          
           <p><?php echo  "© " . date("Y/m/d") ." &#129322 " ?></p>
       </div>
-      <div class="col-sm pt-3  order-first order-md-last">
-      <button type="submit" class="btn btnColor" role="button"><i class="fa-solid fa-circle-play fa-4x"><p class="btnFont py-1">Start Quiz</p></i>
-      <!-- <button type="submit" class="btn btn-primary btn-lg" role="button">Start Quiz</a> -->
-        </div>
-      </form>
 
+      <div class="col-sm pt-3 order-first order-md-last">
+      <button type="submit" class="btn btnColor" role="button"><i class="fa-solid fa-circle-play fa-4x"><p class="btnFont py-1">Start Quiz</p></i></button></div>
+
+<!-- END MAIN FORM TAG ----------------------------------------------------------------------------------->
+      </form>
 
       <div class="col-sm">
 <!-- Include search bar -->
-
-<?php require "./includes/serachbar.php";?>
+      <button id="toggleBtn" class="btn btn-primary m-3 p-2" onclick="helpNeededQuestionmark()">Need Some Help?</button>
+        <div id="text" style="display: none">
+          <p><?php require "./includes/serachbar.php";?></p></div>
 
       </div>
     </div>
-  </div>  
-</div>
-
-<p>
-          
+  </div>
+</div>  
+     
 <script src="/js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>

@@ -1,7 +1,8 @@
   // FUNCTION VALIDATION IF SET---------------------------------------------------------------------------------------------
-  // debugger;
+ 
 
 function validateForm() {
+   // debugger;
     var isValid = true;
     var errorMessage = document.getElementById("errorMessage");
     var radioButtons = document.getElementsByName("question1");
@@ -36,8 +37,21 @@ function submitForm() {
   window.open(searchURL, "_blank");
 }
 
+// FUNCTION SEARCHBAR QUERY ONCLICK HELPER ---------------------------------------------------------------------------------------------
 
+function helpNeededQuestionmark() {
+  // debugger;
 
+  let btn = document.getElementById("toggleBtn");
+  let text = document.getElementById("text");
+  if (text.style.display === "none") {
+    text.style.display = "block";
+    btn.style.display = "none";
+  } else {
+    text.style.display = "none";
+    btn.style.display = "block";
+  }
+}
 
 
 // FUNCTION DELETE ALL COOKIES ---------------------------------------------------------------------------------------------

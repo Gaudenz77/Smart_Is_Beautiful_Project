@@ -1,7 +1,7 @@
 <!-- Searchbar Includes -->
-<h5 style="font-weight: bold; padding-top:20px;">Arm Yourself, With Knowledge!</h5> <!-- class="text-start" -->
+<h5 class="animate__animated animate__lightSpeedInLeft animate__slow" style="font-weight: bold; padding-top:20px;">Arm Yourself, With Knowledge!</h5> <!-- class="text-start" -->
 <form id="search-form">
-  <div class="input-group py-4">
+  <div class="input-group py-4 animate__animated animate__lightSpeedInRight animate__slow">
       <input type="text" class="form-control" id="search-input" >
         <select class="form-select" aria-label="Default select example" id="search-select">
         <div class="btn btn-outline-secondary">
