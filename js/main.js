@@ -5,7 +5,7 @@ function validateForm() {
    // debugger;
     var isValid = true;
     var errorMessage = document.getElementById("errorMessage");
-    var radioButtons = document.getElementsByName("question1");
+    var radioButtons = document.getElementsByName("$answerColumnName");
     var selected = false;
     for (var i = 0; i < radioButtons.length; i++) {
       if (radioButtons[i].checked) {

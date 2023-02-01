@@ -79,6 +79,28 @@ if ($lastQuestionIndex >= 0) {  // Caution: Only For valid question input
 }
 
 
+if (isset($quiz)) {
+    $_SESSION['quiz'] = $quiz;
+    $_SESSION['quiz']['lastQuestionIndex'] = $lastQuestionIndex;
+    $_SESSION['quiz']['currentQuestionIndex'] = $currentQuestionIndex;
+}
+
+if ($lastQuestionIndex >= 0) {  // Caution: Only For valid question input
+    /* echo "HaLOOOOO!!! $lastQuestionIndex"; */
+    $questionName = "question-" . $lastQuestionIndex;
+    $_SESSION[$questionName] = $_POST;
+
+}
+
+if ($lastQuestionIndex == $currentQuestionIndex) {
+    // store answers in session
+    $_SESSION['answers'][$lastQuestionIndex] = $_POST['single-choice'];
+  
+    // redirect to report page
+    header("Location: report.php");
+    exit;
+  }
+
 prettyPrint($_SESSION, '$_SESSION= ');
 
 /* $answers = $_SESSION['single-choice'];

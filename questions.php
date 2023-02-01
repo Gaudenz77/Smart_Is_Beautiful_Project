@@ -1,6 +1,7 @@
 <?php require "./includes/data_collector.php";?>
 <?php require "./includes/html_head_tag.php";?>
 <body>
+
 <?php
 require "./includes/header.php";
 ?>
@@ -13,6 +14,25 @@ if (isset($quiz["questionIdSequence"])) {
 }
 $question = fetchquestionById($id, $dbConnection);
 
+
+//TESTING NOT WORKING ANSWERS WHITOUT ANSWER FIRST QUESTION...
+/* if (isset($quiz["answerSequence"])) {
+  $answer = $quiz["answerSequence"][$currentQuestionIndex];
+} else {
+  $answer = $question["answer"];
+} */
+
+
+/* $_SESSION['answers'][] = ['answer' => $_POST['single-choice']];
+if (!isset($_SESSION['answers'])) {
+  $_SESSION['answers'] = array();
+} */
+
+/* if (isset($_POST['questionNum'])) {
+  $_SESSION['questionNum'] = $_POST['questionNum'];
+}
+ */
+//TESTING NOT WORKING ANSWERS WHITOUT ANSWER FIRST QUESTION...
 ?>
 
 <main>
@@ -45,7 +65,7 @@ $question = fetchquestionById($id, $dbConnection);
 
             if($correct === $answerColumnName) $value = 1;
             else $value = 0;
-            // MAIN STRUCTUR RADIO BUTTONS, EXPANDABLE
+            // MAIN STRUCTURE RADIO BUTTONS, EXPANDABLE
             echo "<div class='form-check'>
             <input class='form-check-input' type='radio' name='single-choice' id='$answerColumnName' value='$value'>
             <label class='form-check-label' for='single-choice-0'>$answerText</label></div>";

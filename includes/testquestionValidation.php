@@ -1,16 +1,11 @@
 <?php
-if (isset($_POST['question1'])) {
-    $correct_answer = "answer-1";
- 
-    $answer = $_POST['question1'];
-    if ( $answer == $correct_answer) {
-        
-        echo "<h3 style='color: green;'>Dear Smartypants, Your Answer Is Correct! <i class='fa-solid fa-face-laugh-wink'></i></h3>";
-    } else{
-        echo "<h3 style='color: red;'>Dear Smartypants, Your Answer Is Incorrect... <i class='fa-solid fa-poo'></i></h3>";
-    }
-   
-}
+/* $answers = $_SESSION['answers'];
+
+// Display the report
+echo "Report:<br>";
+foreach ($answers as $index => $answer) {
+    echo "Question " . ($index + 1) . ": " . $answer . "<br>";
+} */
 ?>
 <?php
 /* if (isset($_POST['topic'])) {
