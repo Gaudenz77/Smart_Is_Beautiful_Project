@@ -92,14 +92,14 @@ if ($lastQuestionIndex >= 0) {  // Caution: Only For valid question input
 
 }
 
-if ($lastQuestionIndex == $currentQuestionIndex) {
+/* if ($lastQuestionIndex == $currentQuestionIndex) {
     // store answers in session
     $_SESSION['answers'][$lastQuestionIndex] = $_POST['single-choice'];
   
     // redirect to report page
     header("Location: report.php");
     exit;
-  }
+} */
 
 prettyPrint($_SESSION, '$_SESSION= ');
 

@@ -27,6 +27,7 @@
       font-size: 100%;
       font-weight: bold;
       }
+      
       /* .formOwn {
       width: fit-content;
       } */
