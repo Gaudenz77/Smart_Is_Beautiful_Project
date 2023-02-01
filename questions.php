@@ -5,69 +5,13 @@
 require "./includes/header.php";
 ?>
 
-<?php 
-
-
-/* echo "$dbHost $dbname $dbUser $dbPassword"; */ // TEST_DEV_ONLY
-
-//print_r($row); // TEST_DEV_ONLY
-$id = 501;
-
-// fetchquestionById function in db_connect.php
+<?php
+/* $id = 501; */
+// Bestimme die Anzahl der verfügbaren Fragen
+if (isset($quiz["questionIdSequence"])) {
+  $id = $quiz["questionIdSequence"][$currentQuestionIndex];
+}
 $question = fetchquestionById($id, $dbConnection);
-try {
-$query = $dbConnection->query("SELECT COUNT(*) From `questions`");
-    $row = $query->fetch(PDO::FETCH_ASSOC);
-    $questionCount = $row["COUNT(*)"];
-} catch (PDOException $e) {
-    echo "Error: " . $e->getMessage();
-    $questionCount = 0;
-}
-$currentQuestionIndex = 0;
-
-/* echo "Number of questions: " . ($questionCount); */  // TEST_DEV_ONLY
-// total questions function in db_connect.php // TEST_DEV_ONLY
-$totalQuestions = getTotalQuestions($dbConnection);
-
-if (isset($_POST['submit'])) {
-  $selectedOption = $_POST['options'];
-  try {
-    $query = $dbConnection->prepare("SELECT answer FROM questions WHERE id = ?");
-    $query->execute([$currentQuestionId]);
-    $correctAnswer = $query->fetchColumn();
-    if ($selectedOption == $correctAnswer) {
-      // go to the next question
-      $currentQuestionIndex++;
-      if ($currentQuestionIndex < $totalQuestions) {
-        $currentQuestionId = $currentQuestionIndex + 1;
-        // fetch the next question and options
-        // ...
-      } else {
-        // quiz is finished
-        // ...
-      }
-    } else {
-      // incorrect answer
-      // ...
-    }
-  } catch (PDOException $e) {
-    echo "Error: " . $e->getMessage();
-    exit;
-  }
-}
-
-?>
-
-
-<?php
-/* prettyPrint($topic, $questionNum, $dbConnection); */
-prettyPrint($quiz,
-$questionNum,
-$dbConnection);"<br>";
-?>
-
-<?php
-/* print_r($_SESSION);"<br>"; */
 
 ?>
 
@@ -76,12 +20,12 @@ $dbConnection);"<br>";
     <div class="row justify-content-center">
       <div class="col-sm-8 animate__animated animate__lightSpeedInRight animate__slow">
         <h1 class="display-2"><b>Smart Is Beautiful</b><br> ... Are You?</h1>
-        <h3>Dear Smartypants: You Did Chose <?php echo $question['topic'];?>:</h3>
+        <h3>Dear Smartypants: You Did Chose '<?= $quiz["topic"] ?>':</h3>
         <p id="errorMessage"></p>
-
-    <p>Question <?php echo ($currentQuestionIndex + 1); ?> of <?php echo $totalQuestions; ?></p>   <!-- <?php /* echo quiz['questionNum'];  */?> -->
-        <label for="question1"><?php echo $question['question_text'];?></label>
-        <form id="quiz-form" action="report.php" method="post" onsubmit="return validateForm();">  <!-- return navigate('next'); -->
+        <p>Question <?php echo ($currentQuestionIndex + 1); ?> of <?php echo $quiz["questionNum"]; ?></p> 
+    <!-- <p>Question --> <?php /* echo ($currentQuestionIndex + 1);  */?> <!--  of --> <?php /* echo $totalQuestions;  */?></p>   <!-- <?php /* echo quiz['questionNum'];  */?> -->
+        <label for="question"><?php echo $question['question_text'];?></label>
+        <form id="quiz-form" action="questions.php" method="post" onsubmit="return navigate('next');">  <!-- return validateForm(); -->
         
         <?php
         // generate answer-radio-buttons with labels
@@ -105,43 +49,14 @@ $dbConnection);"<br>";
             echo "<div class='form-check'>
             <input class='form-check-input' type='radio' name='single-choice' id='$answerColumnName' value='$value'>
             <label class='form-check-label' for='single-choice-0'>$answerText</label></div>";
-
           }
-
         }
 
         ?>
 
-
-
   <input type="hidden" id="questionNum" value="15">
-  <input type="hidden" id="lastQuestionIndex" name="lastQuestionIndex" value="-1">
+  <input type="hidden" id="lastQuestionIndex" name="lastQuestionIndex" value="<?php echo $currentQuestionIndex; ?>">
   <input type="hidden" id="indexStep" name="indexStep" value="1">
-
-
-
-
-  <!-- Form FIELDS Start My First Version, Working With Javascript Val onsubmit="return validateForm();"--------------------------------------------------------------------------------------- -->    
-      <!-- <form id="" action="report.php" method="post" onsubmit="return validateForm();"> 
-      <p id="errorMessage"></p>
-            <div class="form-group p-4">
-          <label for="question1"><?php /* echo $question['question_text']; */?></label>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="question1" id="question_id" value="$id">
-            <label class="form-check-label" for="option1"><?php /* echo $question['answer-1']; */?></label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="question1" id="question_id" value="$id">
-            <label class="form-check-label" for="option2"><?php /* echo $question['answer-2'] */;?></label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="question1" id="question_id" value="$id">
-            <label class="form-check-label" for="option3"><?php /* echo $question['answer-3']; */?></label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="question1" id="question_id" value="$id">
-            <label class="form-check-label" for="option4"><?php /* echo $question['answer-4'] */;?></label>
-          </div> -->
 
    <!-- Form FIELDS End--------------------------------------------------------------------------------------- -->    
      
@@ -161,14 +76,14 @@ $dbConnection);"<br>";
 
       <div class="col-sm pt-3 order-first order-md-last">
       <a class="btn btnColor" href='index.php'><i class="fa-solid fa-circle-chevron-left fa-3x"><p class="btnFont py-1">BACK</p></i></a>
-      <button type="submit" class="btn btn-primary btn-lg" role="button">Next Question</button></div>
-
+      <button type="submit" class="btn" role="button"><i class="fa-solid fa-circle-play fa-4x"><p class="btnFont py-1">Next Question</p></i></button></div>
+      
 <!-- END MAIN FORM TAG ----------------------------------------------------------------------------------->
       </form>
 
       <div class="col-sm">
 <!-- Include search bar -->
-      <button id="toggleBtn" class="btn btn-primary m-3 p-2" onclick="helpNeededQuestionmark()">Need Some Help?</button>
+      <button id="toggleBtn" class="btn btnColor m-3 p-2" onclick="helpNeededQuestionmark()"><i class="fa-regular fa-circle-question fa-2x"><p class="btnFont py-1">Need Some Help?</p></i></button>
         <div id="text" style="display: none">
           <p><?php require "./includes/serachbar.php";?></p></div>
 

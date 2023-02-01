@@ -40,22 +40,18 @@ function fetchquestionIdSequence($topic, $questionNum, $dbConnection) {
 
 /* Select Fields in Index.php, Function----------------------------------------------------------*/
 function getTopics($dbConnection) {
-try {
-    // above give topics originallyy set in database enum field 
-    /*  $query = $dbConnection->query("SELECT DISTINCT topic FROM questions");
-    return $query->fetchAll(PDO::FETCH_COLUMN); */
+  try {
     $query = $dbConnection->query("SELECT DISTINCT topic FROM questions");
     $topics = $query->fetchAll(PDO::FETCH_COLUMN);
-    // uc words does Capitalize first letter of topic enum option
     return array_map('ucwords', $topics);
-} catch (PDOException $e) {
+  } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
     exit;
-}
+  }
 }
 
  /* Select total questions from questions table data in  Function----------------------------------------------------------*/ 
-  function getTotalQuestions($dbConnection) {
+ /*  function getTotalQuestions($dbConnection) {
   try {
     $query = $dbConnection->query("SELECT COUNT(*) FROM questions");
     $totalQuestions = $query->fetchColumn();
@@ -64,6 +60,6 @@ try {
     echo "Error: " . $e->getMessage();
     exit;
   }
-}
+} */
 
 ?>

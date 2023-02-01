@@ -1,4 +1,4 @@
-<?php require "./includes//session_start.php";?>
+<?php require "./includes/data_collector.php";?>
 <?php require "./includes/html_head_tag.php";?>
 <body>
 <!-- HEAD TAG MIGHT BE INCLUDED DIRECTLY IN EACH PAGE // MUST BE TESTED, POSSIBLE ERRORS //-->

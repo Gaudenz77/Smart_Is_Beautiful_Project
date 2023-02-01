@@ -9,7 +9,6 @@ require "./includes/header.php";
 
 
 /* echo "$dbHost $dbname $dbUser $dbPassword"; */ // DEV ONLY
-
 // getTopics function in db_connect.php
 $topics = getTopics($dbConnection);
 
@@ -24,6 +23,7 @@ $topics = getTopics($dbConnection);
   exit;
 } */
 /* ----------------------------------------------------------------------------------------------------without PHP PDO FUNCTION END */
+
 ?>
 
 <?php
@@ -41,10 +41,12 @@ print_r($_SESSION); */
       <h3>Dear Smartypants, Chose A Topic:</h3>
       <form  id="quiz-form" action="questions.php" method="post" onsubmit="return navigate('next');">
         <select class="formOwn form-control my-2 py-3" name="topic" id="topic">
-          <?php foreach ($topics as $topic): ?>
-          <option value="<?= $topic ?>"><?= $topic ?></option> <?= $topic ?>"><?= $topic ?> 
+        <?php foreach ($topics as $topic): ?>
+            <option value="<?= $topic ?>"><?= $topic ?></option>
           <?php endforeach;?>
-        <!-- <option value="astronautics">Astronautics</option> -->
+  
+        <!-- <option value="astronautics">Astronautics</option>
+        <option value="geography">Geography</option> -->
      </select>
 <label style="margin-top:20px;" for="questionNum" class="form-label">Number of Questions</label>
 <input style="width:100px;" type="number" class="form-control" id="questionNum" name="questionNum" min="5" max="40" value="10">
@@ -77,7 +79,7 @@ print_r($_SESSION); */
 
       <div class="col-sm">
 <!-- Include search bar -->
-      <button id="toggleBtn" class="btn btn-primary m-3 p-2" onclick="helpNeededQuestionmark()">Need Some Help?</button>
+      <button id="toggleBtn" class="btn btnColor m-3 p-2" onclick="helpNeededQuestionmark()"><i class="fa-regular fa-circle-question fa-2x"><p class="btnFont py-1">Need Some Help?</p></i></button>
         <div id="text" style="display: none">
           <p><?php require "./includes/serachbar.php";?></p></div>
 
