@@ -21,6 +21,23 @@ function fetchquestionById($id, $dbConnection) {
 
 /* ONLY OPEN WHREN SURE AND SERIOUS SELECT statement  -----  ONLY OPEN WHREN SURE AND SERIOUS SELECT statement ONLY OPEN WHREN SURE AND SERIOUS SELECT statement  -----  ONLY OPEN WHREN SURE AND SERIOUS SELECT statement */
 
+
+//NEW QUERY SQL STMT --------------------------------
+function fetchquestionIdSequence($topic, $questionNum, $dbConnection) {
+  $query = "SELECT `id` FROM `questions` WHERE `topic` = '$topic' ORDER BY RAND() LIMIT $questionNum";  
+  $sqlStatement = $dbConnection->query($query);
+  $rows = $sqlStatement->fetchAll(PDO::FETCH_COLUMN);    // `id` = is column 0;
+
+  // prettyPrint($rows);
+
+  return $rows;
+}
+
+// SELECT `id` FROM `questions` WHERE `topic` = 'astronautics' ORDER BY RAND()LIMIT 5; 
+
+
+
+
 /* Select Fields in Index.php, Function----------------------------------------------------------*/
 function getTopics($dbConnection) {
 try {

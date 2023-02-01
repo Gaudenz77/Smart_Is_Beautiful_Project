@@ -6,7 +6,7 @@ require "./includes/header.php";
 ?>
 
 <?php 
-require "./includes/db_connect.php";
+
 
 /* echo "$dbHost $dbname $dbUser $dbPassword"; */ // TEST_DEV_ONLY
 
@@ -60,13 +60,18 @@ if (isset($_POST['submit'])) {
 
 
 <?php
-/* require "./includes/tools.php"; */
-/* print_r($row); */
+/* prettyPrint($topic, $questionNum, $dbConnection); */
+prettyPrint($quiz,
+$questionNum,
+$dbConnection);"<br>";
+?>
+
+<?php
 /* print_r($_SESSION);"<br>"; */
 
 ?>
 
-<main2>
+<main>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-sm-8 animate__animated animate__lightSpeedInRight animate__slow">
@@ -143,7 +148,7 @@ if (isset($_POST['submit'])) {
     </div>
   </div>
 </div>
-</main2>
+</main>
 <!-- FOOTER START ------------------------------------------------------------------------------------------------------>
 <div class="footer">
   <div class="container">

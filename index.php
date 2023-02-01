@@ -6,7 +6,7 @@ require "./includes/header.php";
 ?>
 
 <?php 
-require "./includes/db_connect.php";
+
 
 /* echo "$dbHost $dbname $dbUser $dbPassword"; */ // DEV ONLY
 
@@ -33,7 +33,7 @@ $topics = getTopics($dbConnection);
 print_r($_SESSION); */
 /* prettyPrint($_SESSION); */
 ?>
-<main2 class="animate__animated animate__lightSpeedInRight animate__slow">
+<main class="animate__animated animate__lightSpeedInRight animate__slow">
 <div class="container">
 <div class="row justify-content-center">
   <div class="col-sm-8 m-4 p-4">
@@ -41,9 +41,10 @@ print_r($_SESSION); */
       <h3>Dear Smartypants, Chose A Topic:</h3>
       <form  id="quiz-form" action="questions.php" method="post" onsubmit="return navigate('next');">
         <select class="formOwn form-control my-2 py-3" name="topic" id="topic">
-       <?php foreach ($topics as $topic): ?>
-        <option value="<?= $topic ?>"><?= $topic ?></option> <?= $topic ?>"><?= $topic ?> is shorthand for <?php echo $topic ?>"><?php echo  $topic ?> 
-        <?php endforeach; ?> 
+          <?php foreach ($topics as $topic): ?>
+          <option value="<?= $topic ?>"><?= $topic ?></option> <?= $topic ?>"><?= $topic ?> 
+          <?php endforeach;?>
+        <!-- <option value="astronautics">Astronautics</option> -->
      </select>
 <label style="margin-top:20px;" for="questionNum" class="form-label">Number of Questions</label>
 <input style="width:100px;" type="number" class="form-control" id="questionNum" name="questionNum" min="5" max="40" value="10">
@@ -55,24 +56,8 @@ print_r($_SESSION); */
     </div>
   </div>
 </div>
-</main2>
+</main>
 
-<!-- <main class="animate__animated animate__lightSpeedInRight animate__slow">
-<div class="container">
-<div class="row justify-content-center">
-    <div class="col-sm-8 m-4 p-4">
-      <h1 class="display-2"><br>Smart Is Beautiful ... Are You?</h1>
-      <h3>Dear Smartypants, Chose A Topic:</h3>
-      <form action="questions.php" method="post">
-        <select class="form-control" name="topic" id="topic"> -->
-       <!--  <?php foreach ($topics as $topic): ?>
-        <option value="<?= $topic ?>"><?= $topic ?></option> <?= $topic ?>"><?= $topic ?> is shorthand for <?php echo $topic ?>"><?php echo  $topic ?> 
-        <?php endforeach; ?> 
-        </select>
-    </div>
-  </div>
-</div>
-</main> -->
 
 <!-- FOOTER START ------------------------------------------------------------------------------------------------------>
 <div class="footer">
