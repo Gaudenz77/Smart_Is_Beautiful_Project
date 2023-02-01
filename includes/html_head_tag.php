@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
-  
   <script src="https://kit.fontawesome.com/d4cbcb96c8.js" crossorigin="anonymous"></script>
   
   <title>Smart_Is_Beautiful</title>
@@ -27,6 +26,9 @@
       font-size: 100%;
       font-weight: bold;
       }
+      /* .formOwn {
+      width: fit-content;
+      } */
   </style>
-    
 </head>
+<body

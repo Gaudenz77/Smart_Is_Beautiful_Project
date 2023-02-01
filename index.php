@@ -1,9 +1,6 @@
 <?php require "./includes/data_collector.php";?>
 <?php require "./includes/html_head_tag.php";?>
-
 <body>
-<!-- HEAD TAG MIGHT BE INCLUDED DIRECTLY IN EACH PAGE // MUST BE TESTED, POSSIBLE ERRORS //-->
-<!-- Everything Works Til Now, Timestamp: Jan 30 08:23 -->
 <?php
 require "./includes/header.php";
 ?>
@@ -43,7 +40,7 @@ print_r($_SESSION); */
   <h1 class="display-2"><b>Smart Is Beautiful</b><br> ... Are You?</h1>
       <h3>Dear Smartypants, Chose A Topic:</h3>
       <form  id="quiz-form" action="questions.php" method="post" onsubmit="return navigate('next');">
-        <select class="form-control" name="topic" id="topic">
+        <select class="formOwn form-control my-2 py-3" name="topic" id="topic">
        <?php foreach ($topics as $topic): ?>
         <option value="<?= $topic ?>"><?= $topic ?></option> <?= $topic ?>"><?= $topic ?> is shorthand for <?php echo $topic ?>"><?php echo  $topic ?> 
         <?php endforeach; ?> 
@@ -88,7 +85,7 @@ print_r($_SESSION); */
       </div>
 
       <div class="col-sm pt-3 order-first order-md-last">
-      <button type="submit" class="btn btnColor" role="button"><i class="fa-solid fa-circle-play fa-4x"><p class="btnFont py-1">Start Quiz</p></i></button></div>
+      <button type="submit" class="btn" role="button"><i class="fa-solid fa-circle-play fa-4x"><p class="btnFont py-1">Start Quiz</p></i></button></div>
 
 <!-- END MAIN FORM TAG ----------------------------------------------------------------------------------->
       </form>
@@ -106,5 +103,5 @@ print_r($_SESSION); */
      
 <script src="/js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>
