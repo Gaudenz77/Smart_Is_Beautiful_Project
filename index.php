@@ -72,7 +72,7 @@ print_r($_SESSION); */
       </div>
 
       <div class="col-sm pt-3 order-first order-md-last">
-      <button type="button" type="submit" class="btn btn-outline-dark" role="button"><i class="fa-solid fa-circle-play fa-4x"><p class="btnFont py-1">Start Quiz</p></i></button></div>
+      <button type="submit" class="btn  btn-lg" role="button"><i class="fa-solid fa-circle-play fa-4x"><p class="btnFont py-1">Start Quiz</p></i></button></div>
 
 <!-- END MAIN FORM TAG ----------------------------------------------------------------------------------->
       </form>

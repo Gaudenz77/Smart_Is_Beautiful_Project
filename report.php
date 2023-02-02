@@ -6,7 +6,21 @@
 require "./includes/header.php";
 ?>
 <?php 
-/* require "./includes/db_connect.php"; */
+$total_questions = $lastQuestionIndex; // number of questions in the quiz
+$correct_answers = 0;
+
+for ($i = 1; $i <= $total_questions; $i++) {
+    $question_key = 'question-' . $i;
+    if ($_SESSION[$question_key]['single-choice'] == 1) {
+        $correct_answers++;
+    }
+}
+
+if ($correct_answers >= $total_questions / 2) {
+    echo "Well done!";
+} else {
+    echo "Bad";
+}
 ?>
 
 <?php
@@ -22,7 +36,7 @@ require "./includes/header.php";
     <div class="col-sm-8">
       <h1 class="display-2">Smart Is Beautiful ... Are You?</h1>
       
-      <?php require "./includes/testquestionValidation.php";?>
+      <?php /* require "./includes/testquestionValidation.php"; */?>
       <h3>Your Answer Is: <?php echo $answer; ?></h3> 
       
     </div>
@@ -35,19 +49,20 @@ require "./includes/header.php";
     <div class="row text-center">
       <div class="col-sm">
         <!-- Include search bar -->
-
-<?php require "./includes/serachbar.php";?>
-
-
-      </div>
-      <div class="col-sm">
-          <h1>Footer</h1>
+        <h1>Footer</h1>
           <p><?php echo  "© " . date("Y/m/d") ." &#129322"?></p>
-      </div>
-      <div class="col-sm pt-3  order-first order-md-last">
+          </div>
+<div class="col-sm pt-3  order-first order-md-last">
       <a class="btn btnColor" href='questions.php'><i class="fa-solid fa-circle-chevron-left fa-3x"></i><p class="btnFont">BACK</p></a>
-      <a type="button" class="btn btn-primary btn-lg" role="button" onclick="deleteAllCookies()">Restart Quiz</a>
+      <button type="button" class="btn btn-lg" role="button" onclick="deleteAllCookies()"><i class="fa-solid fa-circle-play fa-4x"><p class="btnFont py-1">Restart Quiz</p></i></button>
+    </div>
+      <div class="col-sm">
+          <!-- Include search bar -->
+          <button id="toggleBtn" class="btn btnColor m-3 p-2" onclick="helpNeededQuestionmark()"><i class="fa-regular fa-circle-question fa-2x"><p class="btnFont py-1">Need Some Help?</p></i></button>
+          <div id="text" style="display: none">
+          <p><?php require "./includes/serachbar.php";?></p></div>
       </div>
+        
     </div>
   </div>  
 </div>

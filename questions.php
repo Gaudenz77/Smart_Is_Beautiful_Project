@@ -14,25 +14,6 @@ if (isset($quiz["questionIdSequence"])) {
 }
 $question = fetchquestionById($id, $dbConnection);
 
-
-//TESTING NOT WORKING ANSWERS WHITOUT ANSWER FIRST QUESTION...
-/* if (isset($quiz["answerSequence"])) {
-  $answer = $quiz["answerSequence"][$currentQuestionIndex];
-} else {
-  $answer = $question["answer"];
-} */
-
-
-/* $_SESSION['answers'][] = ['answer' => $_POST['single-choice']];
-if (!isset($_SESSION['answers'])) {
-  $_SESSION['answers'] = array();
-} */
-
-/* if (isset($_POST['questionNum'])) {
-  $_SESSION['questionNum'] = $_POST['questionNum'];
-}
- */
-//TESTING NOT WORKING ANSWERS WHITOUT ANSWER FIRST QUESTION...
 ?>
 
 <main>
@@ -45,7 +26,7 @@ if (!isset($_SESSION['answers'])) {
         <p>Question <?php echo ($currentQuestionIndex + 1); ?> of <?php echo $quiz["questionNum"]; ?></p> 
     <!-- <p>Question --> <?php /* echo ($currentQuestionIndex + 1);  */?> <!--  of --> <?php /* echo $totalQuestions;  */?></p>   <!-- <?php /* echo quiz['questionNum'];  */?> -->
         <label for="question"><?php echo $question['question_text'];?></label>
-        <form id="quiz-form" action="questions.php" method="post" onsubmit="return navigate('next');">  <!-- return validateForm(); -->
+        <form id="quiz-form" action="<?php echo $actionUrl; ?>" method="post" onsubmit="return navigate('next');">  <!-- return validateForm(); -->
         
         <?php
         // generate answer-radio-buttons with labels

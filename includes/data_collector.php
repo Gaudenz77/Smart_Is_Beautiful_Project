@@ -63,7 +63,23 @@ else if (str_contains($scriptname, 'questions')) {
     }
 
     $currentQuestionIndex = $lastQuestionIndex + $indexStep;
+
+    if ($currentQuestionIndex + 1 < $quiz["questionNum"]){
+        $actionUrl = "questions.php";
+    }
+    else {
+         $actionUrl = "report.php";
+    }
+
 }
+
+
+else if (str_contains($scriptname, 'report')) {
+    $currentQuestionIndex = -1;
+}
+    else{
+}
+
 // safe quizdata and POST-data of last question of a session
 if (isset($quiz) && $currentQuestionIndex >= 0) {
     $_SESSION['quiz'] = $quiz;
@@ -71,47 +87,27 @@ if (isset($quiz) && $currentQuestionIndex >= 0) {
     $_SESSION['quiz']['currentQuestionIndex'] = $currentQuestionIndex;
 }
 
+
+
 if ($lastQuestionIndex >= 0) {  // Caution: Only For valid question input
-    /* echo "HaLOOOOO!!! $lastQuestionIndex"; */
     $questionName = "question-" . $lastQuestionIndex;
     $_SESSION[$questionName] = $_POST;
 
 }
 
+/* 
+javascript decides onclick on 'previous' or 'next' button whats the target page
 
-if (isset($quiz)) {
-    $_SESSION['quiz'] = $quiz;
-    $_SESSION['quiz']['lastQuestionIndex'] = $lastQuestionIndex;
-    $_SESSION['quiz']['currentQuestionIndex'] = $currentQuestionIndex;
-}
+look main.js functin navigste(direction)
 
-if ($lastQuestionIndex >= 0) {  // Caution: Only For valid question input
-    /* echo "HaLOOOOO!!! $lastQuestionIndex"; */
-    $questionName = "question-" . $lastQuestionIndex;
-    $_SESSION[$questionName] = $_POST;
+php does not do NOCHECKS  or REDSIRECTS (Hard to do), tricky for u need 2 know WHEN session star() has to be set
 
-}
+if ($currentQuestinIndex < 0)
 
-/* if ($lastQuestionIndex == $currentQuestionIndex) {
-    // store answers in session
-    $_SESSION['answers'][$lastQuestionIndex] = $_POST['single-choice'];
-  
-    // redirect to report page
-    header("Location: report.php");
-    exit;
-} */
 
+*/
 prettyPrint($_SESSION, '$_SESSION= ');
 
-/* $answers = $_SESSION['single-choice'];
-
-
-// Display the report
-echo "Report:<br>";
-foreach ($answers as $index => $answer) {
-    echo "Question " . ($index + 1) . ": " . $answer . "<br>";
-}
- */
 
 // DEVONLY: Gibt die aktuelle Session in die Seite aus zum checken
 /* prettyprint($_SESSION);
