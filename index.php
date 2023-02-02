@@ -5,6 +5,7 @@
 require "./includes/header.php";
 ?>
 
+
 <?php 
 /* echo "$dbHost $dbname $dbUser $dbPassword"; */ // DEV ONLY
 // getTopics function in db_connect.php
@@ -43,8 +44,8 @@ $topics = getTopics($dbConnection);
 <div class="footer">
   <div class="container">
     <div class="row text-center">
-      <div class="col-sm">
-          <h1>Footer</h1>
+      <div class="col-sm py-3">
+      <h1><a href="https://vhszh.ch/">Volkshochschule</a></h1>
           <p><?php echo  "© " . date("Y/m/d") ." &#129322 " ?></p>
       </div>
       <div class="col-sm pt-3 order-first order-md-last">

@@ -19,8 +19,10 @@ position: fixed;
 left: 0;
 top: 0;
 width: 100%;
-background-color:#cff4fc; 
-} 
+background-color:#cff4fc;
+z-index: 1;
+}
+
 
 #logo {
     margin-top: 10px;
@@ -39,6 +41,26 @@ width: 900px;
     width:100px;
 }
 
+.btnFont {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 20px;
+   
+}
+
+.btnColor {
+    background-color: #cff4fc;
+}
+
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color:#cff4fc;
+
+}
+
+/* Not Used ------------------------------------------------*/
 /* #errorMessage {
     color: rgb(106, 177, 0);
 } */
@@ -53,24 +75,3 @@ width: 900px;
 /* .formOwn {
     width: fit-content;
 } */
-
-
-.btnFont {
-    font-family: 'Oxygen', sans-serif;
-    font-size: 20px;
-   
-}
-
-.btnColor {
-    background-color: #cff4fc;
-}
-
-
-.footer {
-position: fixed;
-left: 0;
-bottom: 0;
-width: 100%;
-background-color:#cff4fc;
-
-}

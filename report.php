@@ -15,7 +15,7 @@ require "./includes/header.php";
           $correct_answers++;
   }
 }
-  $result = ($correct_answers >= $total_questions / 2) ? "Well done!" : "Bad";
+  $result = ($correct_answers >= $total_questions / 2) ? "Well done, Smartypants!" : "Read A Book Sometimes...<br>Please Try Help-Need-Button Below Next Time.";
 
   $totalPoints = 0;
   foreach($_SESSION as $name => $value) {
@@ -35,9 +35,9 @@ $maxPoints = $_SESSION["quiz"]["questionNum"];
     <div class="col-sm-8">
       <h1 class="display-2">Smart Is Beautiful ... Are You?</h1>
       <h3>I Say:</h3>
-      <h1 class=" "><?php echo $totalPoints; ?></4>
-      <h3>Congrats</h3>
-      <h4><?php echo $result; ?></4> <br>
+      <h1 class="alert alert_success"><?php echo $result; ?></h1>
+      <h4>You scored <?php echo $totalPoints; ?> points...My opinion is... I frankly said above.</4>
+      <p>If you choose more than half of the questions correctly, you did good. Otherwise use the <strong>Need Some Help</strong> Button in the Footer.<br>You might actually learn something new there</p>
         <table class="table table-dark table-striped">
           <thead>
             <tr>
@@ -76,9 +76,9 @@ $maxPoints = $_SESSION["quiz"]["questionNum"];
 <div class="footer">
   <div class="container">
     <div class="row text-center">
-      <div class="col-sm">
+      <div class="col-sm py-3">
         <!-- Include search bar -->
-        <h1>Footer</h1>
+        <h1><a href="https://vhszh.ch/">Volkshochschule</a></h1>
           <p><?php echo  "© " . date("Y/m/d") ." &#129322"?></p>
           </div>
 <div class="col-sm pt-3  order-first order-md-last">

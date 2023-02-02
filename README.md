@@ -13,13 +13,15 @@
 <li>PHP data collection ($_POST, $_GET, $_SESSION) and HTML generation</li>
 </ul>
 
-## Usage
+## Usage: Trivia Quiz
 <ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
+<li>open Index.php-page</li>
+<li>In the select inputfield chose a topic</li>
+<li>Press "Start Quiz" bbutton in the footer bottom right page corner</li>
+<li>Quiz starts: Answer each question by selecting a radio-buttin for answer. If done, press "Next Question", also in the footer, bottom right</li>
+<li>If you hav all questions answerd you will automatically land on the las report.php page</li>
+<li>HERE YOU WILL BE JUDGED...No, its a rather pleasant tipp youll get.. See yourself.</li>
+<li>If help needed, there is a secret search-bar included in the footer of each page, that allows to look for knowledge in Wikipedia or Google directly</li>
 </ol>
 
 ## Thank you for your time.
@@ -35,6 +37,6 @@
 * Internet for research
 * co-trainees for hearing my questions
 * Github (for file repo/sharing/workflow)
-* [Miro](https://miro.com/app/board/uXjVPzeoPiY=/?share_link_id=217846515948)
+* [Figma](https://www.figma.com/file/8QEAAFkEbpSOTPGylIn5TE/Smart-Is-Beautiful---Figma?node-id=0%3A1&t=N9GDx4Kd7GtO6mwY-18)
 ----
-### A teamwork-production by Tobias and Gaudenz
+### A production by Gaudenz

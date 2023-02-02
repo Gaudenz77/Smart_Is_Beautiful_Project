@@ -85,15 +85,15 @@ $question = fetchquestionById($id, $dbConnection);
       <div class="col-sm">
 <!-- Include search bar -->
       <button id="toggleBtn" class="btn btnColor m-3 p-2" onclick="helpNeededQuestionmark()"><i class="fa-regular fa-circle-question fa-2x"><p class="btnFont py-1">Need Some Help?</p></i></button>
-        <div id="text" style="display: none">
+          <div id="text" style="display: none">
           <p><?php require "./includes/serachbar.php";?></p></div>
 
-      </div>
+          </div>
+        </div>
+      </div>  
     </div>
-  </div>  
-</div>
 
   <script src="/js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>
