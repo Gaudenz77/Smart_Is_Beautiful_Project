@@ -33,7 +33,8 @@
 * none, free use
 ----
 ## Tools used
-* Visual Studio Code (Html, Css, JS)
+* HTML, CSS, Javascript, PHP PDO, Phpmyadmin, Nginx, Mysql
+* [Visual Studio Code](https://code.visualstudio.com/)
 * [Bootstrap_5.2](https://getbootstrap.com/)
 * [Animate.css](https://animate.style/)
 * Internet for research
