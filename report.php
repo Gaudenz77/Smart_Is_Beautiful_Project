@@ -15,7 +15,7 @@ require "./includes/header.php";
           $correct_answers++;
   }
 }
-  $result = ($correct_answers >= $total_questions / 2) ? "Well done, Smartypants!" : "Read A Book Sometimes...<br>Please Try Help-Need-Button Below Next Time.";
+  $result = ($correct_answers >= $total_questions / 2) ? "Well done, Smartypants!<img src='assets/img/smart_beautiful_positive.png' alt='good'>" : "Read A Book Sometimes...<img src='assets/img/smart_beautiful_negative.png' alt='image description'><br>Please Try Help-Need-Button Below Next Time.";
 
   $totalPoints = 0;
   foreach($_SESSION as $name => $value) {
@@ -38,7 +38,7 @@ $maxPoints = $_SESSION["quiz"]["questionNum"];
       <h1 class="alert alert_success"><?php echo $result; ?></h1>
       <h4>You scored <?php echo $totalPoints; ?> points...My opinion is... I frankly said above.</4>
       <p>If you choose more than half of the questions correctly, you did good. Otherwise use the <strong>Need Some Help</strong> Button in the Footer.<br>You might actually learn something new there</p>
-        <table class="table table-dark table-striped">
+        <!-- <table class="table table-dark table-striped">
           <thead>
             <tr>
               <th>Question</th>
@@ -46,10 +46,10 @@ $maxPoints = $_SESSION["quiz"]["questionNum"];
               <th>Choice</th>
             </tr>
           </thead>
-            <tbody>
+            <tbody> -->
             <?php
         
-            $total_questions = $lastQuestionIndex; // number of questions in the quiz
+            /* $total_questions = $lastQuestionIndex; // number of questions in the quiz
             $correct_answers = 0;
             $correct = "Correct";
             $wrong = "Wrong";
@@ -64,10 +64,10 @@ $maxPoints = $_SESSION["quiz"]["questionNum"];
               if ($_SESSION[$question_key]['single-choice'] == 1) {
                   $correct_answers++;
               }
-            }
+            } */
             ?>
-            </tbody>
-        </table>
+          <!--   </tbody>
+        </table> -->
     </div>
   </div>
 </div>
