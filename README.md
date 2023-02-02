@@ -34,6 +34,8 @@
 ----
 ## Tools used
 * Visual Studio Code (Html, Css, JS)
+* [Bootstrap_5.2](https://getbootstrap.com/)
+* [Animate.css](https://animate.style/)
 * Internet for research
 * co-trainees for hearing my questions
 * Github (for file repo/sharing/workflow)
