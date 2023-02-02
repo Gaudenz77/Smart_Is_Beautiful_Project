@@ -20,3 +20,19 @@
             <input class="form-check-input" type="radio" name="question1" id="question_id" value="$id">
             <label class="form-check-label" for="option4"><?php /* echo $question['answer-4'] */;?></label>
           </div> -->
+
+
+          
+<?
+/* Original Place: index.php Ln 15------------------------------------------------------------------------------------without PHP PDO FUNCTION START */
+/* try { */
+    /* $dbConnection = new PDO("mysql:host=$dbHost;dbname=$dbname;charset=utf8mb4", $dbUser, $dbPass);
+    $dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); */
+  
+/*   $query = $dbConnection->query("SELECT DISTINCT topic FROM questions");
+} catch (PDOException $e) {
+  echo "Error: " . $e->getMessage();
+  exit;
+} */
+/* ----------------------------------------------------------------------------------------------------without PHP PDO FUNCTION END */
+?>

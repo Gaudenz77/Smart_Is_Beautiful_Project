@@ -6,39 +6,68 @@
 require "./includes/header.php";
 ?>
 <?php 
-$total_questions = $lastQuestionIndex; // number of questions in the quiz
-$correct_answers = 0;
+  $total_questions = $lastQuestionIndex; // number of questions in the quiz
+  $correct_answers = 0;
 
-for ($i = 1; $i <= $total_questions; $i++) {
-    $question_key = 'question-' . $i;
-    if ($_SESSION[$question_key]['single-choice'] == 1) {
-        $correct_answers++;
-    }
+  for ($i = 1; $i <= $total_questions; $i++) {
+      $question_key = 'question-' . $i;
+      if ($_SESSION[$question_key]['single-choice'] == 1) {
+          $correct_answers++;
+  }
 }
+  $result = ($correct_answers >= $total_questions / 2) ? "Well done!" : "Bad";
 
-if ($correct_answers >= $total_questions / 2) {
-    echo "Well done!";
-} else {
-    echo "Bad";
+  $totalPoints = 0;
+  foreach($_SESSION as $name => $value) {
+
+  if (str_contains($name, 'question-')) {
+  // if (isset($value["single-choice"])) {
+      $points = intval($value["single-choice"]);
+      $totalPoints = $totalPoints + $points;  // short $totalPoints += $points;
+  }
 }
-?>
-
-<?php
-/* require "./includes/tools.php";
-/* prettyPrint($_SESSION); */
-/* prettyPrint($_POST); */
-/* echo print_r($_POST); */
+$maxPoints = $_SESSION["quiz"]["questionNum"];
 ?>
 
 <main class="animate__animated animate__lightSpeedInRight animate__slow">
 <div class="container">
-<div class="row justify-content-center">
+  <div class="row justify-content-center">
     <div class="col-sm-8">
       <h1 class="display-2">Smart Is Beautiful ... Are You?</h1>
-      
-      <?php /* require "./includes/testquestionValidation.php"; */?>
-      <h3>Your Answer Is: <?php echo $answer; ?></h3> 
-      
+      <h3>I Say:</h3>
+      <h1 class=" "><?php echo $totalPoints; ?></4>
+      <h3>Congrats</h3>
+      <h4><?php echo $result; ?></4> <br>
+        <table class="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th>Question</th>
+              <th>Answer</th>
+              <th>Choice</th>
+            </tr>
+          </thead>
+            <tbody>
+            <?php
+        
+            $total_questions = $lastQuestionIndex; // number of questions in the quiz
+            $correct_answers = 0;
+            $correct = "Correct";
+            $wrong = "Wrong";
+
+            for ($i = 1; $i <= $total_questions; $i++) {
+              $question_key = 'question-' . $i;
+              $question_text = "Question $i"; // replace this with the actual question text
+              $answer = ($_SESSION[$question_key]['single-choice'] == 1) ? $correct : $wrong;
+              $choice = $_SESSION[$question_key]['single-choice'];
+              echo "<tr><td>$question_text</td><td>$answer</td><td>$choice</td></tr>";
+
+              if ($_SESSION[$question_key]['single-choice'] == 1) {
+                  $correct_answers++;
+              }
+            }
+            ?>
+            </tbody>
+        </table>
     </div>
   </div>
 </div>

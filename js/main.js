@@ -1,6 +1,5 @@
   // FUNCTION VALIDATION IF SET---------------------------------------------------------------------------------------------
  
-
 function validateForm() {
    // debugger;
     var isValid = true;
@@ -23,6 +22,7 @@ function validateForm() {
   }
 
 // FUNCTION SEARCHBAR QUERY ON NEW PAGE RESULT ---------------------------------------------------------------------------------------------
+
 function submitForm() {
   const searchInput = document.querySelector("#search-input").value;
   const searchSelect = document.querySelector("#search-select").value;
@@ -53,10 +53,9 @@ function helpNeededQuestionmark() {
   }
 }
 
-
 // FUNCTION DELETE ALL COOKIES ---------------------------------------------------------------------------------------------
 
-function deleteAllCookies() {
+/* function deleteAllCookies() {
     const cookies = document.cookie.split(";");
   
     for (let i = 0; i < cookies.length; i++) {
@@ -67,6 +66,6 @@ function deleteAllCookies() {
     }
     window.location.href = "index.php";
   
-  }
+  } */
 
 

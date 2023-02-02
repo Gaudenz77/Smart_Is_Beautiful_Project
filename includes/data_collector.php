@@ -1,6 +1,5 @@
 <?php 
 session_start();
-
 // load tools
 include './includes/tools.php';
 include './includes/db_connect.php';
@@ -32,7 +31,7 @@ include './includes/db_connect.php';
     }
     
 // questions.php uses................................................................
-else if (str_contains($scriptname, 'questions')) {
+    else if (str_contains($scriptname, 'questions')) {
     if ($lastQuestionIndex === -1) {  // -1 means quiz has not started yet
         // Now start quiz
 
@@ -70,44 +69,37 @@ else if (str_contains($scriptname, 'questions')) {
     else {
          $actionUrl = "report.php";
     }
-
 }
-
-
-else if (str_contains($scriptname, 'report')) {
-    $currentQuestionIndex = -1;
+    else if (str_contains($scriptname, 'report')) {
+        $currentQuestionIndex = -1;
 }
     else{
 }
 
 // safe quizdata and POST-data of last question of a session
-if (isset($quiz) && $currentQuestionIndex >= 0) {
-    $_SESSION['quiz'] = $quiz;
-    $_SESSION['quiz']['lastQuestionIndex'] = $lastQuestionIndex;
-    $_SESSION['quiz']['currentQuestionIndex'] = $currentQuestionIndex;
+    if (isset($quiz) && $currentQuestionIndex >= 0) {
+        $_SESSION['quiz'] = $quiz;
+        $_SESSION['quiz']['lastQuestionIndex'] = $lastQuestionIndex;
+        $_SESSION['quiz']['currentQuestionIndex'] = $currentQuestionIndex;
 }
 
-
-
-if ($lastQuestionIndex >= 0) {  // Caution: Only For valid question input
-    $questionName = "question-" . $lastQuestionIndex;
-    $_SESSION[$questionName] = $_POST;
+    if ($lastQuestionIndex >= 0) {  // Caution: Only For valid question input
+        $questionName = "question-" . $lastQuestionIndex;
+        $_SESSION[$questionName] = $_POST;
 
 }
 
 /* 
 javascript decides onclick on 'previous' or 'next' button whats the target page
 
-look main.js functin navigste(direction)
+look main.js function navigates (direction)
 
 php does not do NOCHECKS  or REDSIRECTS (Hard to do), tricky for u need 2 know WHEN session star() has to be set
 
 if ($currentQuestinIndex < 0)
-
-
 */
-prettyPrint($_SESSION, '$_SESSION= ');
 
+/* prettyPrint($_SESSION, '$_SESSION= '); */
 
 // DEVONLY: Gibt die aktuelle Session in die Seite aus zum checken
 /* prettyprint($_SESSION);
