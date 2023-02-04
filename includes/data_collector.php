@@ -81,14 +81,34 @@ include './includes/db_connect.php';
         $_SESSION['quiz'] = $quiz;
         $_SESSION['quiz']['lastQuestionIndex'] = $lastQuestionIndex;
         $_SESSION['quiz']['currentQuestionIndex'] = $currentQuestionIndex;
+        
 }
 
     if ($lastQuestionIndex >= 0) {  // Caution: Only For valid question input
         $questionName = "question-" . $lastQuestionIndex;
         $_SESSION[$questionName] = $_POST;
-
+     
 }
 
+
+/* function displayQuestions($dbConnection) {
+    // Retrieve the question IDs from the session
+    $questionIdSequence = $_SESSION['questionIdSequence'];
+  
+    // Prepare the SQL query to retrieve the question data
+    $placeholders = implode(',', array_fill(0, count($questionIdSequence), '?'));
+    $sql = "SELECT `question_text`, `answer-1`, `answer-2`, `answer-3`, `answer-4`, `answer-5`, `correct` FROM questions WHERE id IN ($placeholders)";
+    $stmt = $dbConnection->prepare($sql);
+  
+    // Bind the question IDs as parameters to the query
+    foreach ($questionIdSequence as $i => $id) {
+        $stmt->bindValue($i + 1, $id);
+    }
+  
+    // Execute the query and retrieve the question data
+    $stmt->execute();
+    $questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  } */
 /* 
 javascript decides onclick on 'previous' or 'next' button whats the target page
 

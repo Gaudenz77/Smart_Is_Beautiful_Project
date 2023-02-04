@@ -37,7 +37,7 @@ function fetchquestionIdSequence($topic, $questionNum, $dbConnection) {
 
 
 
-/* Select Fields in Index.php, Function----------------------------------------------------------*/
+/* Select Fields in Index.php, Function plus set ucwords function----------------------------------------------------------*/
 /* function getTopics($dbConnection) {
   try {
     $query = $dbConnection->query("SELECT DISTINCT `topic` FROM `questions`");
@@ -92,6 +92,12 @@ function getTopics($dbConnection) {
     exit;
   }
 } */
+
+
+
+/* $query = $dbConnection->query("SELECT `topic`, `question_text`, `answer-1`, `answer-2`, `answer-3`, `answer-4`, `answer-5`, `correct` FROM `questions` WHERE `id` = $id;");
+$row = $query->fetch(PDO::FETCH_ASSOC);
+prettyPrint($row, $dbConnection); */
 
 
 ?>

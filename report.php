@@ -27,6 +27,34 @@ require "./includes/header.php";
   }
 }
 $maxPoints = $_SESSION["quiz"]["questionNum"];
+
+
+
+/* displayQuestions($dbConnection); */
+
+// Output the data as a table
+/* echo '<table>';
+echo '<tr>';
+echo '<th>Question Text</th>';
+echo '<th>Answer 1</th>';
+echo '<th>Answer 2</th>';
+echo '<th>Answer 3</th>';
+echo '<th>Answer 4</th>';
+echo '<th>Correct Answer</th>';
+echo '</tr>';
+foreach ($questions as $question) {
+    echo '<tr>';
+    echo '<td>' . $question['question_text'] . '</td>';
+    echo '<td>' . $question['answer-1'] . '</td>';
+    echo '<td>' . $question['answer-2'] . '</td>';
+    echo '<td>' . $question['answer-3'] . '</td>';
+    echo '<td>' . $question['answer-4'] . '</td>';
+    echo '<td>' . $question['answer-5'] . '</td>';
+    echo '<td>' . $question['correct'] . '</td>';
+    echo '</tr>';
+}
+echo '</table>'; */
+
 ?>
 
 <main class="animate__animated animate__lightSpeedInRight animate__slow">
@@ -48,8 +76,8 @@ $maxPoints = $_SESSION["quiz"]["questionNum"];
           </thead>
             <tbody> -->
             <?php
-        
-            /* $total_questions = $lastQuestionIndex; // number of questions in the quiz
+/* 
+            $total_questions = $lastQuestionIndex; // number of questions in the quiz
             $correct_answers = 0;
             $correct = "Correct";
             $wrong = "Wrong";
@@ -66,7 +94,7 @@ $maxPoints = $_SESSION["quiz"]["questionNum"];
               }
             } */
             ?>
-          <!--   </tbody>
+         <!--    </tbody>
         </table> -->
     </div>
   </div>
@@ -87,7 +115,7 @@ $maxPoints = $_SESSION["quiz"]["questionNum"];
     </div>
       <div class="col-sm">
           <!-- Include search bar -->
-          <button id="toggleBtn" class="btn btnColor m-3 p-2" href='index.php'><i class="fa-regular fa-circle-question fa-2x"><p class="btnFont py-1">Need Some Help?</p></i></button>  <!-- onclick="helpNeededQuestionmark()" -->
+          <button id="toggleBtn" class="btn btnColor m-3 p-2" onclick="helpNeededQuestionmark()"><i class="fa-regular fa-circle-question fa-2x"><p class="btnFont py-1">Need Some Help?</p></i></button>  <!-- onclick="helpNeededQuestionmark()" -->
           <div id="text" style="display: none">
           <p><?php require "./includes/serachbar.php";?></p></div>
       </div>
