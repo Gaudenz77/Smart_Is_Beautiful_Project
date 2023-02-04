@@ -87,7 +87,7 @@ $maxPoints = $_SESSION["quiz"]["questionNum"];
     </div>
       <div class="col-sm">
           <!-- Include search bar -->
-          <button id="toggleBtn" class="btn btnColor m-3 p-2" onclick="helpNeededQuestionmark()"><i class="fa-regular fa-circle-question fa-2x"><p class="btnFont py-1">Need Some Help?</p></i></button>
+          <button id="toggleBtn" class="btn btnColor m-3 p-2" href='index.php'><i class="fa-regular fa-circle-question fa-2x"><p class="btnFont py-1">Need Some Help?</p></i></button>  <!-- onclick="helpNeededQuestionmark()" -->
           <div id="text" style="display: none">
           <p><?php require "./includes/serachbar.php";?></p></div>
       </div>

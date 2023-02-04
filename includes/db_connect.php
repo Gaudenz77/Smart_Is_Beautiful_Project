@@ -32,8 +32,7 @@ function fetchquestionIdSequence($topic, $questionNum, $dbConnection) {
 
   return $rows;
 }
-
-// SELECT `id` FROM `questions` WHERE `topic` = 'astronautics' ORDER BY RAND()LIMIT 5; 
+// SELECT `id` FROM `questions` WHERE `topic` = 'astronautics' ORDER BY RAND()LIMIT 5;  (see above) 
 
 
 
@@ -41,7 +40,7 @@ function fetchquestionIdSequence($topic, $questionNum, $dbConnection) {
 /* Select Fields in Index.php, Function----------------------------------------------------------*/
 function getTopics($dbConnection) {
   try {
-    $query = $dbConnection->query("SELECT DISTINCT topic FROM questions");
+    $query = $dbConnection->query("SELECT DISTINCT `topic` FROM `questions`");
     $topics = $query->fetchAll(PDO::FETCH_COLUMN);
     return array_map('ucwords', $topics);
   } catch (PDOException $e) {
@@ -49,6 +48,42 @@ function getTopics($dbConnection) {
     exit;
   }
 }
+
+
+//NEW QUERY NAME_MAP SELECT OPTIONS --------------------------------
+/* function displayDropdown($dbConnection) {
+  // Define the map
+  $nameMap = array(
+      'music' => 'Music',
+      'ch-norris' => 'Chuck Norris',
+      'animals' => 'Animals',
+      'movies' => 'Movies',
+      'd-n-d' => 'Dungeons & Dragons',
+      'astronautics' => 'Astronautics',
+      'technology'  => 'Technology',
+      'ai' => 'Artificial Intelligence',
+      'geography' => 'Geography',
+      'sports' => 'Sports',
+      'science' => 'Science',
+      'informatics' => 'Informatics',
+      'gen-knowledge' => 'General Knowledge'
+  );
+
+  // Retrieve the data from the database
+  $result = $dbConnection->query("SELECT * FROM `questions`");
+  $data = $result->fetchAll();
+
+  // Display the dropdown in the form
+  echo '<select name="topic">';
+  foreach ($data as $row) {
+      $value = $row['topic'];
+      $label = $nameMap[$value];
+      echo '<option value="' . $value . '">' . $label . '</option>';
+  }
+  echo '</select>';
+} */
+
+
 
  /* Select total questions from questions table data in  Function----------------------------------------------------------*/ 
  /*  function getTotalQuestions($dbConnection) {

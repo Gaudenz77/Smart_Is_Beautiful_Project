@@ -55,7 +55,7 @@ function helpNeededQuestionmark() {
 
 // FUNCTION DELETE ALL COOKIES ---------------------------------------------------------------------------------------------
 
-/* function deleteAllCookies() {
+function deleteAllCookies() {
     const cookies = document.cookie.split(";");
   
     for (let i = 0; i < cookies.length; i++) {
@@ -66,6 +66,6 @@ function helpNeededQuestionmark() {
     }
     window.location.href = "index.php";
   
-  } */
+  }
 
 
