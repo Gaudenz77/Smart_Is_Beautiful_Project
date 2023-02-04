@@ -38,7 +38,7 @@ function fetchquestionIdSequence($topic, $questionNum, $dbConnection) {
 
 
 /* Select Fields in Index.php, Function----------------------------------------------------------*/
-function getTopics($dbConnection) {
+/* function getTopics($dbConnection) {
   try {
     $query = $dbConnection->query("SELECT DISTINCT `topic` FROM `questions`");
     $topics = $query->fetchAll(PDO::FETCH_COLUMN);
@@ -48,12 +48,12 @@ function getTopics($dbConnection) {
     exit;
   }
 }
-
+ */
 
 //NEW QUERY NAME_MAP SELECT OPTIONS --------------------------------
-/* function displayDropdown($dbConnection) {
+
   // Define the map
-  $nameMap = array(
+  $topicNameMap = [
       'music' => 'Music',
       'ch-norris' => 'Chuck Norris',
       'animals' => 'Animals',
@@ -67,21 +67,17 @@ function getTopics($dbConnection) {
       'science' => 'Science',
       'informatics' => 'Informatics',
       'gen-knowledge' => 'General Knowledge'
-  );
+];
 
-  // Retrieve the data from the database
-  $result = $dbConnection->query("SELECT * FROM `questions`");
-  $data = $result->fetchAll();
-
-  // Display the dropdown in the form
-  echo '<select name="topic">';
-  foreach ($data as $row) {
-      $value = $row['topic'];
-      $label = $nameMap[$value];
-      echo '<option value="' . $value . '">' . $label . '</option>';
+function getTopics($dbConnection) {
+  try {
+    $query = $dbConnection->query("SELECT DISTINCT topic FROM questions");
+    return $query->fetchAll(PDO::FETCH_COLUMN);
+  } catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
+    exit;
   }
-  echo '</select>';
-} */
+}
 
 
 

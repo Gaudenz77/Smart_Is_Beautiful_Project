@@ -21,10 +21,10 @@ $topics = getTopics($dbConnection);
       <form  id="quiz-form" action="questions.php" method="post" onsubmit="return navigate('next');">
         <select class="formOwn form-control my-2 py-3" name="topic" id="topic">
         <?php foreach ($topics as $topic): ?>
-          <option value="<?= $topic ?>"><?= $topic ?></option>
+          <option value="<?= $topic ?>"><?= $topicNameMap[$topic] ?? $topic ?></option>
           <?php endforeach;?>
         </select>
-<!-- Variant without $topics = getTopics($dbConnection); , you have to explicitly write all the selesct options -------------------------------->
+<!-- Variant without $topics = getTopics($dbConnection); , you have to explicitly write all the select options -------------------------------->
 <!-- <option value="astronautics">Astronautics</option>
 <option value="geography">Geography</option> -->
         
