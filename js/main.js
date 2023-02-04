@@ -1,6 +1,6 @@
   // FUNCTION VALIDATION IF SET---------------------------------------------------------------------------------------------
  
-function validateForm() {
+/* function validateForm() {
    // debugger;
     var isValid = true;
     var errorMessage = document.getElementById("errorMessage");
@@ -19,7 +19,7 @@ function validateForm() {
       errorMessage.innerHTML = "";
     }
     return isValid;
-  }
+  } */
 
 // FUNCTION SEARCHBAR QUERY ON NEW PAGE RESULT ---------------------------------------------------------------------------------------------
 

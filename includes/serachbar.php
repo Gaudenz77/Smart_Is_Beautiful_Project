@@ -1,5 +1,5 @@
 <!-- Searchbar Includes -->
-<h5 class="animate__animated animate__lightSpeedInLeft animate__slow" style="font-weight: bold; padding-top:20px;">Arm Yourself, With Knowledge!</h5> <!-- class="text-start" -->
+<h5 class="animate__animated animate__lightSpeedInLeft animate__slow" style="font-weight: bold; padding-top:20px;">Arm Yourself, With Knowledge!</h5> 
 <form id="search-form">
   <div class="input-group py-4 animate__animated animate__lightSpeedInRight animate__slow">
       <input type="text" class="form-control" id="search-input" >
@@ -8,7 +8,7 @@
           <option value="google">Google</option>
           <option value="wikipedia">Wikipedia</option>
         </select>
-        <button class="btn bbtn btn-outline-dark" type="button" onclick="submitForm()">Search</button>
+        <button class="btn btn btn-outline-dark" type="button" onclick="submitForm()">Search</button>
   </div>
 </form>
 
