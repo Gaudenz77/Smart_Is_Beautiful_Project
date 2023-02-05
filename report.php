@@ -30,29 +30,39 @@ $maxPoints = $_SESSION["quiz"]["questionNum"];
 
 /* displayQuestions($dbConnection); */
 
-// Output the data as a table
-/* echo '<table>';
-echo '<tr>';
-echo '<th>Question Text</th>';
-echo '<th>Answer 1</th>';
-echo '<th>Answer 2</th>';
-echo '<th>Answer 3</th>';
-echo '<th>Answer 4</th>';
-echo '<th>Correct Answer</th>';
-echo '</tr>';
-foreach ($questions as $question) {
-    echo '<tr>';
-    echo '<td>' . $question['question_text'] . '</td>';
-    echo '<td>' . $question['answer-1'] . '</td>';
-    echo '<td>' . $question['answer-2'] . '</td>';
-    echo '<td>' . $question['answer-3'] . '</td>';
-    echo '<td>' . $question['answer-4'] . '</td>';
-    echo '<td>' . $question['answer-5'] . '</td>';
-    echo '<td>' . $question['correct'] . '</td>';
-    echo '</tr>';
+ try {
+
+  $questionIds = $_SESSION['quiz']['questionIdSequence'];
+  // Create a placeholder for the IDs
+  $placeholders = implode(',', array_fill(0, count($questionIds), '?'));
+  
+  // Prepare the SQL statement
+  $stmt = $dbConnection->prepare("SELECT * FROM questions WHERE id IN ($placeholders)"); 
+  // Execute the statement with the IDs
+  $stmt->execute($questionIds);
+
+  // Fetch all records as an associative array
+  $resultTable = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+  // Iterate through each record in the associative array
+  foreach ($resultTable as $row) {
+
+    $id = $row['id'];
+    $question_text = $row['question_text'];
+    $correctAnswer = $row['correct'];
+    
+      // Access the data for each record
+      echo "<p>ID: $id</p>";
+      echo "<p>Question: $question_text</p>";
+      echo "<p>Correct Answer: $correctAnswer</p>";
+      // ... etc.
+  }
 }
-echo '</table>';
- */
+catch(PDOException $e) {
+  echo "Error: " . $e->getMessage();
+}
+$dbConnection = null;
+
 ?>
 
 <main class="animate__animated animate__lightSpeedInRight animate__slow">
