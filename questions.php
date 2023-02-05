@@ -48,7 +48,7 @@ $question = fetchquestionById($id, $dbConnection);
             else $value = 0;
             // MAIN STRUCTURE RADIO BUTTONS, EXPANDABLE
             echo "<div class='form-check'>
-            <input class='form-check-input' type='radio' name='single-choice' id='$answerColumnName' value='$value'>
+            <input class='form-check-input' type='radio' name='single-choice' id='$answerColumnName' value='$value'>  
             <label class='form-check-label' for='single-choice-0'>$answerText</label></div>"; 
           }
         }

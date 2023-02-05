@@ -15,7 +15,7 @@ require "./includes/header.php";
           $correct_answers++;
   }
 }
-  $result = ($correct_answers >= $total_questions / 2) ? "Well done, Smartypants!<img src='assets/img/smart_beautiful_positive.png' alt='good'>" : "Read A Book Sometimes...<img src='assets/img/smart_beautiful_negative.png' alt='image description'><br>Please Try Help-Need-Button Below Next Time.";
+  $result = ($correct_answers >= $total_questions / 2) ? "Well done, Smartypants!<img src='assets/img/smart_beautiful_positive.png' alt='good'>" : "Read A Book Sometimes...<img src='assets/img/smart_beautiful_negative.png' alt='image description'><br>Please Try Need-Some-Help-Button Below Next Time.";
 
   $totalPoints = 0;
   foreach($_SESSION as $name => $value) {
@@ -30,19 +30,11 @@ $maxPoints = $_SESSION["quiz"]["questionNum"];
 
 /* displayQuestions($dbConnection); */
 
- try {
+ 
 
-  $questionIds = $_SESSION['quiz']['questionIdSequence'];
-  // Create a placeholder for the IDs
-  $placeholders = implode(',', array_fill(0, count($questionIds), '?'));
-  
-  // Prepare the SQL statement
-  $stmt = $dbConnection->prepare("SELECT * FROM questions WHERE id IN ($placeholders)"); 
-  // Execute the statement with the IDs
-  $stmt->execute($questionIds);
+$questionIds = $_SESSION['quiz']['questionIdSequence'];
+$resultTable = get_records_by_ids($dbConnection, "questions", $questionIds);
 
-  // Fetch all records as an associative array
-  $resultTable = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   // Iterate through each record in the associative array
   foreach ($resultTable as $row) {
@@ -57,10 +49,6 @@ $maxPoints = $_SESSION["quiz"]["questionNum"];
       echo "<p>Correct Answer: $correctAnswer</p>";
       // ... etc.
   }
-}
-catch(PDOException $e) {
-  echo "Error: " . $e->getMessage();
-}
 $dbConnection = null;
 
 ?>
@@ -70,8 +58,8 @@ $dbConnection = null;
   <div class="row justify-content-center">
     <div class="col-sm-8">
       <h1 class="display-2">Smart Is Beautiful ... Are You?</h1>
-      <h3>I Say:</h3>
-      <h1 class="alert alert_success"><?php echo $result; ?></h1>
+      <h2>I Say:</h2>
+      <h3 class="alert alert_success"><?php echo $result; ?></h3>
       <h4>You scored <?php echo $totalPoints; ?> points...My opinion is... I frankly said above.</4>
       <p>If you choose more than half of the questions correctly, you did good. Otherwise use the <strong>Need Some Help</strong> Button in the Footer.<br>You might actually learn something new there</p>
         <table class="table table-dark table-striped">
@@ -84,23 +72,23 @@ $dbConnection = null;
           </thead>
             <tbody>
             <?php
-
+/* 
             $total_questions = $lastQuestionIndex; // number of questions in the quiz
             $correct_answers = 0;
             $correct = "Correct";
             $wrong = "Wrong";
-
+      
             for ($i = 1; $i <= $total_questions; $i++) {
-              $question_key = 'question-' . $i;
-              $question_text = "Question $i"; // replace this with the actual question text
-              $answer = ($_SESSION[$quiz][$question_key]['single-choice'] == 1) ? $correct : $wrong;
-              $choice = $_SESSION[$quiz][$question_key]['single-choice'];
-              echo "<tr><td>$question_text</td><td>$answer</td><td>$choice</td></tr>";
-
-              if ($_SESSION[$question_key]['single-choice'] == 1) {
-                  $correct_answers++;
-              }
-            }
+                $question_key = 'question-' . $i;
+                $question_text = "Question $i"; // replace this with the actual question text
+                $answer = ($_SESSION[$question_key]['single-choice'] == 1) ? $correct : $wrong;
+                $choice = $_SESSION[$question_key]['single-choice'];
+                echo "<tr><td>$question_text</td><td>$answer</td><td>$choice</td></tr>";
+      
+                if ($_SESSION[$question_key]['single-choice'] == 1) {
+                    $correct_answers++;
+                }
+            } */
             ?>
             </tbody>
         </table>

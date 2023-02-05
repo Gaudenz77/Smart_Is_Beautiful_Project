@@ -94,4 +94,27 @@ Select total questions from questions table data in  Function END---------------
 $row = $query->fetch(PDO::FETCH_ASSOC);
 prettyPrint($row, $dbConnection); */
 
+
+// function get_records_by_ids..
+
+function get_records_by_ids($dbConnection, $questions, $questionIds) {
+  // Create a placeholder for the IDs
+  $placeholders = implode(',', array_fill(0, count($questionIds), '?'));
+
+  // Prepare the SQL statement
+  $stmt = $dbConnection->prepare("SELECT * FROM $questions WHERE id IN ($placeholders)"); 
+  // Execute the statement with the IDs
+  $stmt->execute($questionIds);
+
+  // Fetch all records as an associative array
+  $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  
+  return $result;
+}
+
+
+
+
+
+
 ?>
