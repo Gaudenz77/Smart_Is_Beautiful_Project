@@ -28,27 +28,9 @@ require "./includes/header.php";
 }
 $maxPoints = $_SESSION["quiz"]["questionNum"];
 
-/* displayQuestions($dbConnection); */
-
- 
-
 $questionIds = $_SESSION['quiz']['questionIdSequence'];
 $resultTable = get_records_by_ids($dbConnection, "questions", $questionIds);
-
-
-  // Iterate through each record in the associative array
-  foreach ($resultTable as $row) {
-
-    $id = $row['id'];
-    $question_text = $row['question_text'];
-    $correctAnswer = $row['correct'];
-    
-      // Access the data for each record
-      echo "<p>ID: $id</p>";
-      echo "<p>Question: $question_text</p>";
-      echo "<p>Correct Answer: $correctAnswer</p>";
-      // ... etc.
-  }
+/* $topics = getTopics($dbConnection); */
 $dbConnection = null;
 
 ?>
@@ -62,33 +44,56 @@ $dbConnection = null;
       <h3 class="alert alert_success"><?php echo $result; ?></h3>
       <h4>You scored <?php echo $totalPoints; ?> points...My opinion is... I frankly said above.</4>
       <p>If you choose more than half of the questions correctly, you did good. Otherwise use the <strong>Need Some Help</strong> Button in the Footer.<br>You might actually learn something new there</p>
-        <table class="table table-dark table-striped">
-          <thead>
+        <!-- <p>Your topic is <?= $quiz['topic'] ?></p> -->
+      <table class="table table-dark table-striped">
+          <!-- <thead>
             <tr>
+              <th>Id</th>
+              <th>Topic</th>
               <th>Question</th>
-              <th>Answer</th>
               <th>Choice</th>
+              <th>Answer 1</th>
+              <th>Answer 2</th>
+              <th>Answer 3</th>
+              <th>Answer 4</th>
+              <th>Answer 5</th>
+              
             </tr>
           </thead>
-            <tbody>
+            <tbody> -->
             <?php
-/* 
-            $total_questions = $lastQuestionIndex; // number of questions in the quiz
-            $correct_answers = 0;
-            $correct = "Correct";
-            $wrong = "Wrong";
-      
-            for ($i = 1; $i <= $total_questions; $i++) {
-                $question_key = 'question-' . $i;
-                $question_text = "Question $i"; // replace this with the actual question text
-                $answer = ($_SESSION[$question_key]['single-choice'] == 1) ? $correct : $wrong;
-                $choice = $_SESSION[$question_key]['single-choice'];
-                echo "<tr><td>$question_text</td><td>$answer</td><td>$choice</td></tr>";
-      
-                if ($_SESSION[$question_key]['single-choice'] == 1) {
-                    $correct_answers++;
-                }
+           /*  display_records($resultTable);
+            function display_records($records) {
+
+              // roll through record in associative array
+              foreach ($records as $row) {
+                $id = $row['id'];
+                $topic = $row['topic'];
+                $question_text = $row['question_text'];
+                $correctAnswer = $row['correct'];
+                $answer_1 = $row['answer-1'];
+                $answer_2 = $row['answer-2'];
+                $answer_3 = $row['answer-3'];
+                $answer_4 = $row['answer-4'];
+                $answer_5 = $row['answer-5'];
+                
+                // get the data for each record
+                echo "<tr>";
+                echo "<td>$id</td>";
+                echo "<td>$topic</td>";
+                echo "<td>$question_text</td>";
+                echo "<td>$correctAnswer</td>";
+                echo "<td>$answer_1</td>";
+                echo "<td>$answer_2</td>";
+                echo "<td>$answer_3</td>";
+                echo "<td>$answer_4</td>";
+                echo "<td>$answer_5</td>";
+                echo "</tr>";
+                // ... etc.
+              }
+           
             } */
+            
             ?>
             </tbody>
         </table>

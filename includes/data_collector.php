@@ -108,17 +108,9 @@ include './includes/db_connect.php';
     $stmt->execute();
     $questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
   } */
-/* 
-javascript decides onclick on 'previous' or 'next' button whats the target page
 
-look main.js function navigates (direction)
 
-php does not do NOCHECKS  or REDSIRECTS (Hard to do), tricky for u need 2 know WHEN session star() has to be set
-
-if ($currentQuestinIndex < 0)
-*/
-
-prettyPrint($_SESSION, '$_SESSION= ');
+/* prettyPrint($_SESSION, '$_SESSION= '); */
 
 // DEVONLY: Gibt die aktuelle Session in die Seite aus zum checken
 /* prettyprint($_SESSION);

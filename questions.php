@@ -13,7 +13,7 @@ if (isset($quiz["questionIdSequence"])) {
   $id = $quiz["questionIdSequence"][$currentQuestionIndex];
 }
 $question = fetchquestionById($id, $dbConnection);
-
+/* $topics = getTopics($dbConnection); */
 ?>
 
 <main>
@@ -21,7 +21,7 @@ $question = fetchquestionById($id, $dbConnection);
     <div class="row justify-content-center">
       <div class="col-sm-8 animate__animated animate__lightSpeedInRight animate__slow">
         <h1 class="display-2"><b>Smart Is Beautiful</b><br> ... Are You?</h1>
-        <h3>Dear Smartypants: You Did Chose '<?= $quiz["topic"] ?>':</h3>
+        <h3>Dear Smartypants: You Did Chose '<?= $quiz["topic"]; ?>':</h3> 
         <p id="errorMessage"></p>
         <p>Question <?php echo ($currentQuestionIndex + 1); ?> of <?php echo $quiz["questionNum"]; ?></p> 
     <!-- <p>Question --> <?php /* echo ($currentQuestionIndex + 1);  */?> <!--  of --> <?php /* echo $totalQuestions;  */?></p>   <!-- <?php /* echo quiz['questionNum'];  */?> -->
