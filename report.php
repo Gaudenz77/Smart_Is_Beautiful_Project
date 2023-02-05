@@ -28,8 +28,6 @@ require "./includes/header.php";
 }
 $maxPoints = $_SESSION["quiz"]["questionNum"];
 
-
-
 /* displayQuestions($dbConnection); */
 
 // Output the data as a table
@@ -53,8 +51,8 @@ foreach ($questions as $question) {
     echo '<td>' . $question['correct'] . '</td>';
     echo '</tr>';
 }
-echo '</table>'; */
-
+echo '</table>';
+ */
 ?>
 
 <main class="animate__animated animate__lightSpeedInRight animate__slow">
@@ -66,7 +64,7 @@ echo '</table>'; */
       <h1 class="alert alert_success"><?php echo $result; ?></h1>
       <h4>You scored <?php echo $totalPoints; ?> points...My opinion is... I frankly said above.</4>
       <p>If you choose more than half of the questions correctly, you did good. Otherwise use the <strong>Need Some Help</strong> Button in the Footer.<br>You might actually learn something new there</p>
-        <!-- <table class="table table-dark table-striped">
+        <table class="table table-dark table-striped">
           <thead>
             <tr>
               <th>Question</th>
@@ -74,9 +72,9 @@ echo '</table>'; */
               <th>Choice</th>
             </tr>
           </thead>
-            <tbody> -->
+            <tbody>
             <?php
-/* 
+
             $total_questions = $lastQuestionIndex; // number of questions in the quiz
             $correct_answers = 0;
             $correct = "Correct";
@@ -85,17 +83,17 @@ echo '</table>'; */
             for ($i = 1; $i <= $total_questions; $i++) {
               $question_key = 'question-' . $i;
               $question_text = "Question $i"; // replace this with the actual question text
-              $answer = ($_SESSION[$question_key]['single-choice'] == 1) ? $correct : $wrong;
-              $choice = $_SESSION[$question_key]['single-choice'];
+              $answer = ($_SESSION[$quiz][$question_key]['single-choice'] == 1) ? $correct : $wrong;
+              $choice = $_SESSION[$quiz][$question_key]['single-choice'];
               echo "<tr><td>$question_text</td><td>$answer</td><td>$choice</td></tr>";
 
               if ($_SESSION[$question_key]['single-choice'] == 1) {
                   $correct_answers++;
               }
-            } */
+            }
             ?>
-         <!--    </tbody>
-        </table> -->
+            </tbody>
+        </table>
     </div>
   </div>
 </div>

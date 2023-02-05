@@ -21,7 +21,6 @@ function fetchquestionById($id, $dbConnection) {
 
 /* ONLY OPEN WHREN SURE AND SERIOUS SELECT statement  -----  ONLY OPEN WHREN SURE AND SERIOUS SELECT statement ONLY OPEN WHREN SURE AND SERIOUS SELECT statement  -----  ONLY OPEN WHREN SURE AND SERIOUS SELECT statement */
 
-
 //NEW QUERY SQL STMT --------------------------------
 function fetchquestionIdSequence($topic, $questionNum, $dbConnection) {
   $query = "SELECT `id` FROM `questions` WHERE `topic` = '$topic' ORDER BY RAND() LIMIT $questionNum";  
@@ -33,9 +32,6 @@ function fetchquestionIdSequence($topic, $questionNum, $dbConnection) {
   return $rows;
 }
 // SELECT `id` FROM `questions` WHERE `topic` = 'astronautics' ORDER BY RAND()LIMIT 5;  (see above) 
-
-
-
 
 /* Select Fields in Index.php, Function plus set ucwords function----------------------------------------------------------*/
 /* function getTopics($dbConnection) {
@@ -79,9 +75,7 @@ function getTopics($dbConnection) {
   }
 }
 
-
-
- /* Select total questions from questions table data in  Function----------------------------------------------------------*/ 
+ /* Select total questions from questions table data in  Function START----------------------------------------------------------*/ 
  /*  function getTotalQuestions($dbConnection) {
   try {
     $query = $dbConnection->query("SELECT COUNT(*) FROM questions");
@@ -91,13 +85,13 @@ function getTopics($dbConnection) {
     echo "Error: " . $e->getMessage();
     exit;
   }
-} */
+} 
+Select total questions from questions table data in  Function END--------------------*/
 
 
-
+// Sadly not helping here...
 /* $query = $dbConnection->query("SELECT `topic`, `question_text`, `answer-1`, `answer-2`, `answer-3`, `answer-4`, `answer-5`, `correct` FROM `questions` WHERE `id` = $id;");
 $row = $query->fetch(PDO::FETCH_ASSOC);
 prettyPrint($row, $dbConnection); */
-
 
 ?>

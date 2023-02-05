@@ -90,7 +90,6 @@ include './includes/db_connect.php';
      
 }
 
-
 /* function displayQuestions($dbConnection) {
     // Retrieve the question IDs from the session
     $questionIdSequence = $_SESSION['questionIdSequence'];
@@ -119,9 +118,10 @@ php does not do NOCHECKS  or REDSIRECTS (Hard to do), tricky for u need 2 know W
 if ($currentQuestinIndex < 0)
 */
 
-/* prettyPrint($_SESSION, '$_SESSION= '); */
-
+/* prettyPrint($_SESSION, '$_SESSION= ');
+ */
 // DEVONLY: Gibt die aktuelle Session in die Seite aus zum checken
 /* prettyprint($_SESSION);
 prettyprint($_GET); */
+
 ?>
