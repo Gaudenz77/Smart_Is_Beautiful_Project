@@ -21,7 +21,7 @@
 <li>Quiz starts: Answer each question by selecting a radio-buttin for answer. If done, press "Next Question", also in the footer, bottom right</li>
 <li>If you hav all questions answerd you will automatically land on the las report.php page</li>
 <li>HERE YOU WILL BE JUDGED...No, its a rather pleasant tipp youll get.. See yourself.</li>
-<li>If help needed, there is a secret search-bar included in the footer of each page, that allows to look for knowledge in Wikipedia or Google directly</li>
+<li>If help needed, there is a secret search-bar included in the footer of each page, that allows to look for knowledge in Wikipedia or Google directly(javascript)</li>
 </ol>
 
 ## Thank you for your time.
