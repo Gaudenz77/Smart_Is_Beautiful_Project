@@ -16,7 +16,7 @@ $topics = getTopics($dbConnection);
 <div class="container">
 <div class="row justify-content-center">
   <div class="col-sm-8 m-4 p-4">
-  <h1 class="display-2"><b>Smart Is Beautiful</b><br> ... Are You?</h1>
+  <h1 class="display-2"><b>Smart Is Beautiful</b><br> ... Are You yeerrrsh?</h1>
       <h3>Dear Smartypants, Chose A Topic:</h3>
       <form  id="quiz-form" action="questions.php" method="post" onsubmit="return navigate('next');">
         <select class="formOwn form-control my-2 py-3" name="topic" id="topic">
